@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang Portfolio cá nhân - Mạc Thùy Thiên Ân - Lập trình viên AI & Data Science">
+    <title>Portfolio Cá Nhân | Mạc Thùy Thiên Ân</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Khung Wrapper chính cho CSS Grid Layout -->
+    <div class="portfolio-container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h1>Mạc Thùy Thiên Ân - AI & Software Developer Portfolio</h1>
+            <p>Sinh viên ngành Trí tuệ Nhân tạo - Đại học Lạc Hồng (LHU)</p>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#projects">Dự án</a></li>
+                    <li><a href="#skills">Kỹ năng</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="contact">
+            <h3>Thông Tin Liên Hệ</h3>
+            <p><strong>Họ và tên:</strong> Mạc Thùy Thiên Ân</p>
+            <p><strong>Lớp:</strong> 25AI111</p>
+            <p><strong>Email:</strong> viettei123cin@gmail.com</p>
+            <p><strong>GitHub:</strong> github.com/Miejian</p>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- SECTION 1: Giới thiệu bản thân -->
+            <section id="about" class="section-box">
+                <h2>Giới Thiệu Bản Thân</h2>
+                <figure class="hero-center">
+                    <img src="avatar.jpg" alt="Ảnh chân dung Mạc Thùy Thiên Ân" width="150">
+                    <figcaption>Mạc Thùy Thiên Ân - Sinh viên lớp 25AI111</figcaption>
+                </figure>
+                <p>Xin chào! Mình là Mạc Thùy Thiên Ân, sinh viên chuyên ngành Trí tuệ Nhân tạo (AI). Mình có niềm đam mê mạnh mẽ với việc nghiên cứu học máy (Machine Learning), xử lý dữ liệu và phát triển các ứng dụng web hiện đại.</p>
+            </section>
+
+            <!-- SECTION 2: Kỹ năng chuyên môn (Flexbox) -->
+            <section id="skills" class="section-box">
+                <h2>Kỹ Năng Chuyên Môn</h2>
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">HTML5 & CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">Pandas & NumPy</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Tư duy giải quyết vấn đề</span>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Dự án nổi bật (CSS Grid Gallery 6 items) -->
+            <section id="projects" class="section-box">
+                <h2>Dự Án Nổi Bật</h2>
+                <div class="project-gallery">
+                    <article class="project-card">
+                        <h3>1. Hệ thống Phân loại Ảnh Thông Minh</h3>
+                        <p>Ứng dụng mô hình Deep Learning phân loại hình ảnh theo thời gian thực sử dụng CNN.</p>
+                        <small><strong>Công nghệ:</strong> Python, TensorFlow, OpenCV, Flask</small>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>2. Trợ lý Ảo Giọng nói Tiếng Việt</h3>
+                        <p>Xây dựng chatbot và trợ lý đàm thoại tương tác bằng giọng nói tiếng Việt tích hợp LLM.</p>
+                        <small><strong>Công nghệ:</strong> Python, PyTorch, Whisper, FastAPI</small>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>3. Dự đoán Chuẩn đoán Y tế</h3>
+                        <p>Mô hình dự đoán nguy cơ bệnh lý dựa trên dữ liệu chỉ số sức khỏe người bệnh.</p>
+                        <small><strong>Công nghệ:</strong> Python, Scikit-learn, Pandas</small>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>4. Web Portfolio Cá Nhân</h3>
+                        <p>Trang web giới thiệu năng lực cá nhân xây dựng chuẩn HTML5 & CSS Grid Layout System.</p>
+                        <small><strong>Công nghệ:</strong> HTML5, CSS Grid, Flexbox</small>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>5. Hệ thống Gợi ý Sản phẩm</h3>
+                        <p>Thuật toán Collaborative Filtering gợi ý khóa học cho sinh viên theo sở thích.</p>
+                        <small><strong>Công nghệ:</strong> Python, Collaborative Filtering, Flask</small>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>6. Tool Tự động hóa Dữ liệu</h3>
+                        <p>Công cụ cào và làm sạch dữ liệu tự động từ các trang thông tin công nghệ.</p>
+                        <small><strong>Công nghệ:</strong> Python, BeautifulSoup, Selenium</small>
+                    </article>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>&copy; <time datetime="2026">2026</time> Mạc Thùy Thiên Ân (Lớp 25AI111). Tất cả quyền được bảo lưu.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
