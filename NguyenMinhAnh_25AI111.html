@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạp chí Khám Phá - Khơi Nguồn Tri Thức</title>
+    <!-- Nhúng Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <!-- Nhúng FontAwesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="logo"><i class="fa-solid fa-compass"></i> Khám Phá</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#tech"><i class="fa-solid fa-microchip"></i> Công nghệ</a></li>
+                    <li><a href="#nature"><i class="fa-solid fa-leaf"></i> Thiên nhiên</a></li>
+                    <li><a href="#culture"><i class="fa-solid fa-masks-theater"></i> Văn hóa</a></li>
+                    <li><a href="#projects" class="btn-primary">Dự án 2026</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Khung lưới tổng thể (CSS Grid Layout) -->
+    <div class="layout-container">
+        
+        <main class="main-content">
+            <!-- Chuyên mục bài viết -->
+            <section id="tech" class="category-section">
+                <h2 class="section-title">Tiêu điểm Công nghệ</h2>
+                <div class="article-list">
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Trí tuệ nhân tạo (AI) Thế hệ mới</h3>
+                            <p>Cách các mô hình ngôn ngữ lớn đang tái định hình tư duy của nhân loại trong công việc và sáng tạo nghệ thuật.</p>
+                            <a href="#" class="read-more">Đọc tiếp &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Điện toán Lượng tử 2026</h3>
+                            <p>Bước đột phá trong việc giải quyết các bài toán phức tạp mà siêu máy tính truyền thống phải mất hàng ngàn năm.</p>
+                            <a href="#" class="read-more">Đọc tiếp &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Yêu cầu: KHU VỰC DỰ ÁN (PROJECT GALLERY) -->
+            <section id="projects" class="category-section">
+                <h2 class="section-title">Thư viện Dự án (Project Gallery)</h2>
+                <div class="project-grid">
+                    <!-- Item 1 -->
+                    <article class="project-item" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <h4>Smart Home AI</h4>
+                            <p>Tự động hóa nhà cửa</p>
+                        </div>
+                    </article>
+                    <!-- Item 2 -->
+                    <article class="project-item" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <h4>Eco-System</h4>
+                            <p>Bảo tồn sinh thái</p>
+                        </div>
+                    </article>
+                    <!-- Item 3 -->
+                    <article class="project-item" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <h4>Cyber Security</h4>
+                            <p>Bảo mật dữ liệu</p>
+                        </div>
+                    </article>
+                    <!-- Item 4 -->
+                    <article class="project-item" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <h4>Quantum Web</h4>
+                            <p>Kiến trúc phi tập trung</p>
+                        </div>
+                    </article>
+                    <!-- Item 5 -->
+                    <article class="project-item" style="background-image: url('https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <h4>VR Tour 360</h4>
+                            <p>Thực tế ảo</p>
+                        </div>
+                    </article>
+                    <!-- Item 6 -->
+                    <article class="project-item" style="background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <h4>DevOps Pipeline</h4>
+                            <p>Tối ưu hóa quy trình</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3><i class="fa-solid fa-fire"></i> Tin nổi bật</h3>
+                <ul class="trend-list">
+                    <li><a href="#">Sự phục hồi của rừng Amazon</a></li>
+                    <li><a href="#">Giao thoa văn hóa thời kỳ số</a></li>
+                    <li><a href="#">Xu hướng CSS Grid & Flexbox</a></li>
+                </ul>
+            </div>
+            <div class="widget author-box">
+                <div class="author-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                <h4>Nguyễn Minh Anh</h4>
+                <p>Web Designer / Developer</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h2 class="logo"><i class="fa-solid fa-compass"></i> Khám Phá</h2>
+                <p>Khơi nguồn tri thức, cập nhật công nghệ và đời sống.</p>
+            </div>
+            <div>
+                <h4>Liên kết</h4>
+                <p><a href="#">Về chúng tôi</a></p>
+                <p><a href="#">Bảo mật</a></p>
+            </div>
+            <div>
+                <h4>Liên hệ</h4>
+                <p><i class="fa-solid fa-envelope"></i> info@khampha.vn</p>
+                <p><i class="fa-solid fa-phone"></i> 1900 2026</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Tạp chí Khám Phá. Thiết kế bởi Nguyễn Minh Anh (25AI111).
+        </div>
+    </footer>
+
+</body>
+</html>
