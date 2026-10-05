@@ -4,223 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trang Portfolio cá nhân - Mạc Thùy Thiên Ân - Lập trình viên AI & Data Science">
-    <title>Portfolio Cá Nhân | Mạc Thùy Thiên Ân - AI Engineer</title>
-
-    <!-- Google Fonts: Plus Jakarta Sans (Hiện đại, trẻ trung, năng động) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Liên kết file CSS ngoại vi cho Tuần 3: Flexbox & CSS Grid -->
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Trang Portfolio cá nhân - Lập trình viên AI & Computer Vision">
+    <title>Portfolio Cá Nhân | AI Engineer</title>
 </head>
 
 <body>
 
-    <!-- KHUNG TỔNG THỂ VỚI CSS GRID (LLO 2.1.2) -->
-    <div class="page-layout">
+    <!-- THẺ <header>: Khu vực đầu trang, chứa thông tin nhận diện thương hiệu và thanh điều hướng -->
+    <header>
+        <h1>Mạc Thùy Thiên Ân - AI Developer Portfolio</h1>
 
-        <!-- THẺ <header>: Khu vực đầu trang, chứa thông tin nhận diện thương hiệu và thanh điều hướng (Chiếm toàn bộ chiều rộng với grid-column: 1 / -1) -->
-        <header>
-            <div class="logo">
-                <h1>Mạc Thùy Thiên Ân <span class="badge-role">AI Developer</span></h1>
-            </div>
+        <!-- THẺ <nav>: Định nghĩa tập hợp các liên kết điều hướng chính của trang -->
+        <nav>
+            <ul>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <!-- THẺ <nav>: Định nghĩa tập hợp các liên kết điều hướng chính của trang (Áp dụng Flexbox - LLO 2.1.1) -->
-            <nav>
-                <ul>
-                    <li><a href="#about">Giới thiệu</a></li>
-                    <li><a href="#projects">Dự án</a></li>
-                    <li><a href="#skills">Kỹ năng</a></li>
-                    <li><a href="#contact">Liên hệ</a></li>
-                </ul>
-            </nav>
-        </header>
+    <!-- THẺ <main>: Chứa toàn bộ nội dung chính, độc lập và quan trọng nhất của trang web (chỉ dùng 1 lần) -->
+    <main>
 
-        <!-- THẺ <main>: Chứa toàn bộ nội dung chính, độc lập và quan trọng nhất của trang web (Cột 1 trong CSS Grid) -->
-        <main>
+        <!-- SECTION 1: Giới thiệu bản thân -->
+        <!-- THẺ <section>: Nhóm các nội dung có cùng một chủ đề xác định -->
+        <section id="about">
+            <h2>Giới Thiệu Bản Thân</h2>
 
-            <!-- SECTION 1: Giới thiệu bản thân -->
-            <!-- THẺ <section>: Nhóm các nội dung có cùng một chủ đề xác định -->
-            <section id="about">
-                <h2>Giới Thiệu Bản Thân</h2>
+            <!-- THẺ <figure> & <figcaption>: Định nghĩa khối hình ảnh/minh họa có đi kèm chú thích -->
+            <figure>
+                <img src="avatar.jpg" alt="Ảnh chân dung Mạc Thùy Thiên Ân" width="150">
+                <figcaption>Sinh viên ngành Trí tuệ Nhân tạo - LHU</figcaption>
+            </figure>
 
-                <!-- THẺ <figure> & <figcaption>: Định nghĩa khối hình ảnh/minh họa có đi kèm chú thích -->
-                <figure>
-                    <!-- Dùng avatar.svg với fallback tự động sang avatar.jpg nếu có -->
-                    <img src="avatar.jpg" onerror="this.onerror=null; this.src='avatar.svg';"
-                        alt="Ảnh chân dung Mạc Thùy Thiên Ân" width="150" height="150">
-                    <figcaption>Sinh viên ngành Trí tuệ Nhân tạo - LHU</figcaption>
-                </figure>
+            <p>Chào bạn! Mình là Mạc Thùy Thiên Ân, sinh viên chuyên ngành Trí tuệ Nhân tạo (AI) tại Đại học Lạc Hồng.
+                Mình có niềm đam mê mạnh mẽ với lĩnh vực Học máy (Machine Learning), Xử lý dữ liệu
+                và Thiết kế giao diện (UI/UX).</p>
+        </section>
 
-                <p>Chào bạn! Mình là Mạc Thùy Thiên Ân, sinh viên chuyên ngành Trí tuệ Nhân tạo (AI) tại Đại học Lạc Hồng.
-                    Mình có niềm đam mê mạnh mẽ với lĩnh vực Học máy (Machine Learning), Xử lý dữ liệu và Thiết kế giao diện (UI/UX).
-                    Mục tiêu của mình là tạo ra những ứng dụng AI thông minh, tương tác mượt mà và mang lại trải nghiệm đột phá.</p>
-            </section>
+        <!-- SECTION 2: Các dự án nổi bật -->
+        <section id="projects">
+            <h2>Dự Án Nổi Bật</h2>
 
-            <!-- SECTION 2: Các dự án nổi bật -->
-            <section id="projects">
-                <h2>Dự Án Nổi Bật</h2>
+            <!-- THẺ <article>: Định nghĩa một khối nội dung độc lập, có thể đứng riêng biệt (ví dụ: một dự án) -->
+            <article>
+                <h3>Hệ thống Phân loại Ảnh Thông Minh (Smart Image Classifier)</h3>
+                <p>Mô tả: Ứng dụng mô hình Deep Learning phân loại hình ảnh theo thời gian thực sử dụng mạng nơ-ron
+                    tích chập (CNN) kết hợp xử lý thị giác máy tính.</p>
+                <p>Công nghệ: Python, TensorFlow, OpenCV, Flask</p>
+            </article>
 
-                <div class="projects-container">
-                    <!-- THẺ <article>: Định nghĩa một khối nội dung độc lập, có thể đứng riêng biệt (ví dụ: một dự án) -->
-                    <article>
-                        <h3>🤖 Hệ thống Phân loại Ảnh Thông Minh (Smart Image Classifier)</h3>
-                        <p>Mô tả: Ứng dụng mô hình Deep Learning phân loại hình ảnh theo thời gian thực sử dụng mạng nơ-ron
-                            tích chập (CNN) kết hợp xử lý thị giác máy tính.</p>
-                        <!-- Flexbox Card Tags cho công nghệ -->
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">Flask</span>
-                        </div>
-                    </article>
+            <article>
+                <h3>Trợ lý Ảo Nhận diện Giọng nói Tiếng Việt</h3>
+                <p>Mô tả: Xây dựng chatbot và trợ lý đàm thoại tương tác bằng giọng nói tiếng Việt tích hợp mô hình
+                    ngôn ngữ lớn (LLM) và Whisper.</p>
+                <p>Công nghệ: Python, PyTorch, Whisper, FastAPI</p>
+            </article>
 
-                    <article>
-                        <h3>🎙️ Trợ lý Ảo Nhận diện Giọng nói Tiếng Việt</h3>
-                        <p>Mô tả: Xây dựng chatbot và trợ lý đàm thoại tương tác bằng giọng nói tiếng Việt tích hợp mô hình
-                            ngôn ngữ lớn (LLM) và Whisper.</p>
-                        <!-- Flexbox Card Tags cho công nghệ -->
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">Whisper</span>
-                            <span class="tech-tag">FastAPI</span>
-                        </div>
-                    </article>
+            <article>
+                <h3>Hệ thống Phân tích & Gợi ý Dữ liệu Học tập</h3>
+                <p>Mô tả: Thuật toán Collaborative Filtering gợi ý khóa học và tài liệu chuyên ngành cá nhân hóa
+                    cho sinh viên dựa trên lịch sử quan tâm.</p>
+                <p>Công nghệ: Python, Pandas, Scikit-learn, Streamlit</p>
+            </article>
+        </section>
 
-                    <article>
-                        <h3>📊 Hệ thống Phân tích & Gợi ý Dữ liệu Học tập</h3>
-                        <p>Mô tả: Thuật toán Collaborative Filtering gợi ý khóa học và tài liệu chuyên ngành cá nhân hóa
-                            cho sinh viên dựa trên lịch sử quan tâm.</p>
-                        <!-- Flexbox Card Tags cho công nghệ -->
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">Streamlit</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
+        <!-- SECTION 3: Kỹ năng chuyên môn -->
+        <section id="skills">
+            <h2>Kỹ Năng Chuyên Môn</h2>
+            <ul>
+                <li>Ngôn ngữ & Thư viện AI: Python, C++, TensorFlow, PyTorch, Pandas, OpenCV</li>
+                <li>Công cụ thiết kế: Figma (UI/UX, Component Systems)</li>
+                <li>Web Frontend: HTML5/CSS3, JavaScript</li>
+                <li>Quản lý mã nguồn: Git, GitHub Workflow</li>
+            </ul>
+        </section>
 
-            <!-- SECTION 3: Kỹ năng chuyên môn -->
-            <!-- YÊU CẦU BÀI THỰC HÀNH SỐ 2: Flexbox với flex-wrap: wrap cho thẻ kỹ năng (Skills tags) -->
-            <section id="skills">
-                <h2>Kỹ Năng Chuyên Môn</h2>
+    </main>
 
-                <div class="skills-wrapper">
-                    <!-- Nhóm kỹ năng 1 -->
-                    <div class="skill-category">
-                        <h3>💻 Ngôn ngữ & Thư viện AI</h3>
-                        <ul class="skill-tags">
-                            <li class="tag">Python</li>
-                            <li class="tag">C++</li>
-                            <li class="tag">TensorFlow</li>
-                            <li class="tag">PyTorch</li>
-                            <li class="tag">Pandas & NumPy</li>
-                            <li class="tag">OpenCV</li>
-                        </ul>
-                    </div>
+    <!-- THẺ <aside>: Chứa nội dung phụ, liên quan gián tiếp đến nội dung chính (Sidebar/Thông tin nhanh) -->
+    <aside id="contact">
+        <h3>Thông Tin Liên Hệ Nhanh</h3>
+        <p>Họ và tên: Mạc Thùy Thiên Ân</p>
+        <p>MSSV: 25AI111</p>
+        <p>Email: viettei123cin@gmail.com</p>
+        <p>GitHub: github.com/Miejian</p>
+        <p>Trường: Đại học Lạc Hồng (LHU)</p>
+    </aside>
 
-                    <!-- Nhóm kỹ năng 2 -->
-                    <div class="skill-category">
-                        <h3>🎨 Thiết kế giao diện & Web Frontend</h3>
-                        <ul class="skill-tags">
-                            <li class="tag">HTML5</li>
-                            <li class="tag">CSS3 (Flexbox/Grid)</li>
-                            <li class="tag">JavaScript</li>
-                            <li class="tag">Figma UI/UX</li>
-                            <li class="tag">FastAPI</li>
-                            <li class="tag">Flask</li>
-                        </ul>
-                    </div>
-
-                    <!-- Nhóm kỹ năng 3 -->
-                    <div class="skill-category">
-                        <h3>🚀 Quản lý mã nguồn & Quy trình</h3>
-                        <ul class="skill-tags">
-                            <li class="tag">Git</li>
-                            <li class="tag">GitHub Workflow</li>
-                            <li class="tag">VS Code</li>
-                            <li class="tag">Docker</li>
-                            <li class="tag">Vibe Coding</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- THẺ <aside>: Chứa nội dung phụ, đóng vai trò SIDEBAR trong CSS Grid (Cột 2) -->
-        <aside id="contact">
-            <div class="sidebar-sticky">
-                <h3>Thông Tin Liên Hệ Nhanh</h3>
-
-                <div class="status-badge">
-                    <span class="status-dot"></span> Đang mở cơ hội thực tập AI
-                </div>
-
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="icon">👤</span>
-                        <div class="detail">
-                            <span class="label">Họ và tên</span>
-                            <p>Mạc Thùy Thiên Ân</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="icon">🎓</span>
-                        <div class="detail">
-                            <span class="label">Lớp</span>
-                            <p>25AI111</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="icon">📧</span>
-                        <div class="detail">
-                            <span class="label">Email</span>
-                            <a href="mailto:viettei123cin@gmail.com">viettei123cin@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="icon">🐙</span>
-                        <div class="detail">
-                            <span class="label">GitHub</span>
-                            <a href="https://github.com/Miejian" target="_blank"
-                                rel="noopener noreferrer">github.com/Miejian</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="icon">📍</span>
-                        <div class="detail">
-                            <span class="label">Trường học</span>
-                            <p>Đại học Lạc Hồng (LHU)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="quick-action">
-                    <a href="#about" class="btn-action">Tìm hiểu thêm ↓</a>
-                </div>
-            </div>
-        </aside>
-
-        <!-- THẺ <footer>: Định nghĩa chân trang, trải dài toàn bộ lưới với grid-column: 1 / -1 -->
-        <footer>
-            <p>&copy; <time datetime="2026">2026</time> Mạc Thùy Thiên Ân (25AI111). Tất cả quyền được bảo lưu.</p>
-            <!-- THẺ <time>: Giúp máy tính và công cụ tìm kiếm đọc chính xác dữ liệu mốc thời gian -->
-        </footer>
-
-    </div>
+    <!-- THẺ <footer>: Định nghĩa chân trang, chứa bản quyền, mốc thời gian và các liên kết phụ -->
+    <footer>
+        <p>&copy; <time datetime="2026">2026</time> Mạc Thùy Thiên Ân (25AI111). Tất cả quyền được bảo lưu.</p>
+        <!-- THẺ <time>: Giúp máy tính và công cụ tìm kiếm đọc chính xác dữ liệu mốc thời gian -->
+    </footer>
 
 </body>
 
