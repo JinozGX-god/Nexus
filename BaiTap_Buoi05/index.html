@@ -1,3 +1,4 @@
+<!-- Tệp này sao chép từ NguyenHoangPhuc_25AI111.html để hỗ trợ xem trực tiếp trên Live Server / GitHub Pages -->
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -13,18 +14,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons 6 (Hiển thị icon không cần JS) -->
+    <!-- Font Awesome Icons 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- File CSS chính của Portfolio (100% Pure HTML5 & CSS3 - Không dùng JavaScript) -->
+    <!-- HOẠT ĐỘNG 3: CDN Thư viện AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9kcIE9UI746l8TqvPPoW6i61zUfN+A61Fq3cIbbV8l5lH90w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- File CSS chính của Portfolio -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- =========================================================================
-         MÀN HÌNH TẢI TRANG (PRELOADER SPINNER) THUẦN CSS - KHÔNG CẦN JS
-         Hiển thị spinner xoay 360 độ khi người dùng vừa vào trang, sau đó tự mờ dần
+         HOẠT ĐỘNG 2: MÀN HÌNH TẢI TRANG (PRELOADER SPINNER)
+         Spinner xoay 360 độ vô hạn, border-top-color khác biệt, mờ dần sau 1.2s
          ========================================================================= -->
     <div class="page-preloader" aria-label="Đang nạp dữ liệu...">
         <div class="preloader-content">
@@ -37,8 +41,8 @@
     </div>
 
     <!-- =========================================================================
-         FLOATING ACTION BUTTON (FAB) VỚI HIỆU ỨNG PHẬP PHỒNG (PULSE ANIMATION)
-         Nút tròn cố định góc dưới màn hình, thu hút sự chú ý
+         BÀI TẬP 1: FLOATING ACTION BUTTON (FAB) VỚI PULSE ANIMATION
+         Nút tròn cố định góc dưới màn hình, hiệu ứng phập phồng thu hút sự chú ý
          ========================================================================= -->
     <a href="#contact" class="fab-contact" title="Liên hệ ngay với Phúc" aria-label="Liên hệ nhanh">
         <span class="fab-pulse-ring"></span>
@@ -49,8 +53,8 @@
     <!-- KHUNG TỔNG THỂ GRID 2 CỘT -->
     <div class="page-layout">
 
-        <!-- HEADER & MODERN HAMBURGER MENU (CSS CHECKBOX HACK) -->
-        <header class="site-header">
+        <!-- HEADER & BÀI TẬP 5: MODERN HAMBURGER MENU (CSS CHECKBOX HACK) -->
+        <header class="site-header" data-aos="fade-down" data-aos-duration="600">
             <div class="logo">
                 <a href="#about" class="logo-link">
                     <h1>Nguyễn Hoàng Phúc <span class="badge-role">AI Developer</span></h1>
@@ -79,11 +83,11 @@
         <!-- NỘI DUNG CHÍNH (CỘT 1) -->
         <main>
 
-            <!-- SECTION 1: GIỚI THIỆU BẢN THÂN, THẺ CARD FLIP 3D & TYPING EFFECT -->
-            <section id="about" class="about-section">
+            <!-- SECTION 1: GIỚI THIỆU BẢN THÂN, THẺ CARD FLIP 3D (BÀI 2) & TYPING EFFECT (BÀI 3) -->
+            <section id="about" class="about-section" data-aos="fade-up" data-aos-duration="800">
                 <h2>Giới Thiệu Bản Thân</h2>
 
-                <!-- THẺ NHÂN SỰ LẬT 180 ĐỘ TRONG KHÔNG GIAN 3D (CARD FLIP EFFECT) -->
+                <!-- BÀI TẬP 2: THẺ NHÂN SỰ LẬT 180 ĐỘ TRONG KHÔNG GIAN 3D (CARD FLIP EFFECT) -->
                 <div class="profile-flip-card">
                     <div class="flip-card-inner">
                         <!-- Mặt trước: Avatar mới, Họ tên và Chức danh -->
@@ -123,7 +127,7 @@
                     </div>
                 </div>
 
-                <!-- HIỆU ỨNG TỰ ĐỘNG GÕ CHỮ (TYPING EFFECT THUẦN CSS) -->
+                <!-- BÀI TẬP 3: HIỆU ỨNG TỰ ĐỘNG GÕ CHỮ (TYPING EFFECT THUẦN CSS - KHÔNG DÙNG JS) -->
                 <div class="typing-container">
                     <span class="typing-text">Tôi là một Web Developer & AI Engineer...</span>
                 </div>
@@ -136,8 +140,8 @@
                 </p>
             </section>
 
-            <!-- BANNER PARALLAX: ẢNH NỀN CỐ ĐỊNH KHI CUỘN TRANG (background-attachment: fixed) -->
-            <section class="parallax-banner" aria-label="Công nghệ AI & Tương lai">
+            <!-- BÀI TẬP 4: BANNER PARALLAX (background-attachment: fixed) -->
+            <section class="parallax-banner" data-aos="fade-up" data-aos-duration="800" aria-label="Công nghệ AI & Tương lai">
                 <div class="parallax-content">
                     <span class="quote-tag"><i class="fa-solid fa-sparkles"></i> Triết Lý Phát Triển</span>
                     <h3>Kết Hợp Trí Tuệ Nhân Tạo & Trải Nghiệm Người Dùng</h3>
@@ -145,13 +149,13 @@
                 </div>
             </section>
 
-            <!-- SECTION 2: DỰ ÁN NỔI BẬT (GPU COMPOSITING 60FPS) -->
-            <section id="projects" class="projects-section">
+            <!-- SECTION 2: DỰ ÁN NỔI BẬT (HOẠT ĐỘNG 4: GPU COMPOSITING 60FPS) -->
+            <section id="projects" class="projects-section" data-aos="fade-up" data-aos-duration="800">
                 <h2>Dự Án Nổi Bật</h2>
 
                 <div class="projects-container">
                     <!-- Dự án 1 -->
-                    <article class="project-card">
+                    <article class="project-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
                         <div class="project-header">
                             <h3>⚔️ Vạn Kiếm Quy Tông - Điều khiển kiếm bằng Cử chỉ tay</h3>
                             <span class="project-badge">Computer Vision</span>
@@ -166,7 +170,7 @@
                     </article>
 
                     <!-- Dự án 2 -->
-                    <article class="project-card">
+                    <article class="project-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
                         <div class="project-header">
                             <h3>🥗 NutriCoach AI - Trợ Lý Dinh Dưỡng Thông Minh</h3>
                             <span class="project-badge">AI & Healthcare</span>
@@ -182,11 +186,11 @@
                 </div>
             </section>
 
-            <!-- SECTION 3: KỸ NĂNG VÀ THANH TIẾN ĐỘ TỰ CHẠY (SKILL BARS ANIMATION) -->
-            <section id="skills" class="skills-section">
+            <!-- SECTION 3: KỸ NĂNG VÀ THANH TIẾN ĐỘ TỰ CHẠY (BÀI TẬP 6) -->
+            <section id="skills" class="skills-section" data-aos="fade-up" data-aos-duration="800">
                 <h2>Kỹ Năng Chuyên Môn</h2>
 
-                <!-- THANH KỸ NĂNG CHẠY TỪ 0% ĐẾN GIÁ TRỊ ĐÍCH KHI VÀO TRANG -->
+                <!-- BÀI TẬP 6: THANH KỸ NĂNG CHẠY TỪ 0% ĐẾN GIÁ TRỊ ĐÍCH KHI VÀO TRANG -->
                 <div class="skill-bars-box">
                     <div class="skill-bar-row">
                         <div class="skill-bar-info">
@@ -231,7 +235,7 @@
 
                 <!-- Danh mục kỹ năng phân loại -->
                 <div class="skills-wrapper">
-                    <div class="skill-category">
+                    <div class="skill-category" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
                         <h3><i class="fa-solid fa-code"></i> Ngôn ngữ & Thư viện AI</h3>
                         <ul class="skill-tags">
                             <li class="tag">Python</li>
@@ -244,7 +248,7 @@
                         </ul>
                     </div>
 
-                    <div class="skill-category">
+                    <div class="skill-category" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
                         <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Thiết kế & Hiệu năng Web</h3>
                         <ul class="skill-tags">
                             <li class="tag">Figma</li>
@@ -260,7 +264,7 @@
         </main>
 
         <!-- SIDEBAR LIÊN HỆ & FORM NÚT CẢM XÚC (CỘT 2) -->
-        <aside id="contact" class="site-sidebar">
+        <aside id="contact" class="site-sidebar" data-aos="fade-left" data-aos-duration="800">
             <div class="sidebar-sticky">
                 <h3><i class="fa-solid fa-address-card"></i> Thông Tin Liên Hệ</h3>
 
@@ -294,7 +298,7 @@
                     </div>
                 </div>
 
-                <!-- FORM GỬI TIN NHẮN VỚI NÚT BẤM VI TƯƠNG TÁC CẢM XÚC -->
+                <!-- HOẠT ĐỘNG 1: FORM GỬI TIN NHẮN VỚI NÚT BẤM VI TƯƠNG TÁC CẢM XÚC -->
                 <div class="contact-form-box">
                     <h4><i class="fa-solid fa-paper-plane"></i> Gửi Tin Nhắn Nhanh</h4>
                     
@@ -306,7 +310,7 @@
                             <textarea name="message" class="form-input form-textarea" rows="3" placeholder="Lời nhắn hoặc lời mời hợp tác..." required></textarea>
                         </div>
 
-                        <!-- NÚT BẤM CẢM XÚC: HOVER NÂNG 3PX, CUBIC-BEZIER, ACTIVE LÚN XUỐNG -->
+                        <!-- HOẠT ĐỘNG 1: NÚT BẤM CẢM XÚC: HOVER NÂNG 3PX, CUBIC-BEZIER, ACTIVE LÚN XUỐNG -->
                         <button class="btn-micro-interaction" type="submit">
                             <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
                             <span class="btn-text">Gửi tin nhắn</span>
@@ -324,7 +328,7 @@
         </aside>
 
         <!-- FOOTER -->
-        <footer class="site-footer">
+        <footer class="site-footer" data-aos="fade-up" data-aos-duration="600">
             <div class="footer-inner">
                 <p>&copy; <time datetime="2026">2026</time> <strong>Nguyễn Hoàng Phúc</strong> (MSSV: 25AI111) · Lập trình viên AI & Thiết kế Web ĐH Lạc Hồng.</p>
                 <div class="footer-badges">
@@ -336,6 +340,16 @@
 
     </div>
 
+    <!-- HOẠT ĐỘNG 3: NHÚNG CDN THƯ VIỆN AOS (ANIMATE ON SCROLL) VÀ KHỞI TẠO THEO ĐỀ BÀI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: false,
+            offset: 80
+        });
+    </script>
 </body>
 
 </html>
