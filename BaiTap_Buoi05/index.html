@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ Sơ Năng Lực | Nguyễn Minh Anh</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css"/>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- GLOBAL PAGE LOADER (Hiệu ứng tải trang ban đầu) -->
+    <div id="page-loader" class="page-loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">KHỞI TẠO KHÔNG GIAN...</div>
+    </div>
+
+    <!-- Bài 5: Modern Hamburger Menu -->
+    <div class="hamburger-menu" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Mobile Nav Overlay (Hiển thị khi click Hamburger Menu) -->
+    <div class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="#about" class="nav-item">Tiêu Điểm</a></li>
+            <li><a href="#services" class="nav-item">Chuyên Môn</a></li>
+            <li><a href="#skills" class="nav-item">Năng Lực</a></li>
+            <li><a href="#projects" class="nav-item">Hồ Sơ Dự Án</a></li>
+        </ul>
+    </div>
+
+    <!-- FIXED BACKGROUND: Khôi phục lại nền vũ trụ và chống lag tuyệt đối -->
+    <div class="fixed-bg"></div>
+
+    <!-- SPLIT LAYOUT -->
+    <div class="split-layout">
+        
+        <!-- LEFT: PROFILE PANE -->
+        <aside class="profile-pane">
+            <div class="profile-wrapper" data-aos="fade-up">
+                <div class="avatar-container">
+                    <img src="anh-anime-ca-tinh-nam.jpg" alt="Chân dung Nguyễn Minh Anh" class="avatar-img">
+                    <div class="status-dot" title="Sẵn sàng hợp tác"></div>
+                </div>
+                <h1 class="name">Nguyễn Minh Anh</h1>
+                <p style="font-size: 1.2rem; color: var(--text-muted); font-weight: 500; margin-bottom: 10px;">(Manius)</p>
+                <h2 class="title" style="font-size: 0.95rem; letter-spacing: 2px; color: var(--text-light); margin-bottom: 5px;">CHUYÊN GIA TRÍ TUỆ NHÂN TẠO</h2>
+                
+                <!-- Bài 3: Typing Effect (Chỉ CSS) -->
+                <div class="typing-wrapper">
+                    <p class="typing-effect">Tôi là một Web Developer...</p>
+                </div>
+                
+                <p class="role" style="font-size: 0.95rem; color: var(--text-gray); max-width: 90%; margin: 0 auto var(--space-lg); line-height: 1.8;">Nơi những khái niệm toán học phức tạp được chuyển hoá thành các sản phẩm phần mềm thực tiễn, định hình lại trải nghiệm người dùng trong kỷ nguyên số.</p>
+                
+                <div class="contact-links">
+                    <a href="https://github.com/JinozGX" target="_blank" class="btn btn-outline">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        Mã Nguồn
+                    </a>
+                    <a href="mailto:nguyenminanhhh5178@gmail.com" class="btn btn-primary">Liên Hệ Ngay</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RIGHT: CONTENT PANE -->
+        <main class="content-pane">
+
+            <!-- MINI VERTICAL NAVBAR (TINH TẾ Ở BÊN TRÁI) -->
+            <nav class="mini-vertical-nav">
+                <ul>
+                    <li><a href="#about"><span class="nav-dot"></span><span class="nav-text">Tiêu Điểm</span></a></li>
+                    <li><a href="#services"><span class="nav-dot"></span><span class="nav-text">Chuyên Môn</span></a></li>
+                    <li><a href="#skills"><span class="nav-dot"></span><span class="nav-text">Năng Lực</span></a></li>
+                    <li><a href="#projects"><span class="nav-dot"></span><span class="nav-text">Hồ Sơ Dự Án</span></a></li>
+                </ul>
+            </nav>
+
+            <section id="about" class="content-section" data-aos="fade-up">
+                <h2 class="section-title">Tiêu Điểm Nhân Vật <span class="wave">✍️</span></h2>
+                <div class="card about-card" style="display: flex; gap: 30px; flex-wrap: wrap; align-items: center; justify-content: center;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <p class="section-desc">Được biết đến như một nhân tố năng nổ trong cộng đồng công nghệ tại Đại học Lạc Hồng, Nguyễn Minh Anh hiện đang đảm nhiệm vai trò Kỹ sư Phát triển Toàn diện (Fullstack Developer) tại CLB AI Smart Things. Khác với những nhà lập trình thuần túy, định hướng của anh tập trung vào việc tạo ra sự giao thoa hoàn hảo giữa năng lực xử lý vượt trội của Trí tuệ Nhân tạo và nghệ thuật thiết kế giao diện tương tác, mang lại những giải pháp phần mềm không chỉ thông minh mà còn tinh tế trong từng điểm chạm.</p>
+                    </div>
+                    
+                    <!-- Bài 2: Card Flip Effect (Thẻ nhân sự lật 180 độ) -->
+                    <div class="flip-card-container">
+                        <div class="flip-card">
+                            <div class="flip-card-front">
+                                <img src="anh-anime-ca-tinh-nam.jpg" alt="Nhân sự" class="flip-avatar">
+                                <h3>Nguyễn Minh Anh</h3>
+                                <p style="color: var(--color-primary); font-weight: 600;">AI & Web Developer</p>
+                                <p style="font-size: 0.85rem; margin-top: 10px; color: var(--text-muted)">(Di chuột để lật thẻ)</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Thông Tin Liên Hệ</h3>
+                                <div style="margin-top: 15px; text-align: left; line-height: 2; font-size: 0.95rem;">
+                                    <p style="white-space: nowrap; word-spacing: -1px;">📧 nguyenminanhhh5178@gmail.com</p>
+                                    <p>📱 0774.929.647</p>
+                                    <p>🏠 Lạc Hồng University</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="content-section">
+                <h2 class="section-title" data-aos="fade-up">Phân Tích Chuyên Môn</h2>
+                <div class="services-grid">
+                    <article class="card service-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="icon-svg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>Thiết Kế Giao Diện (Frontend)</h3>
+                        <p>Kiến tạo các kiến trúc Web hiện đại, đặt trọng tâm vào phản hồi tức thời thông qua nền tảng React và Next.js.</p>
+                    </article>
+                    <article class="card service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-svg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"></path>
+                            </svg>
+                        </div>
+                        <h3>Hệ Thống Nền Tảng (Backend)</h3>
+                        <p>Xây dựng hệ sinh thái API với độ trễ thấp, đáp ứng các tiêu chuẩn bảo mật và khả năng mở rộng dữ liệu ở quy mô lớn.</p>
+                    </article>
+                    <article class="card service-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="icon-svg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z" />
+                                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z" />
+                            </svg>
+                        </div>
+                        <h3>Tích Hợp Trí Tuệ Nhân Tạo</h3>
+                        <p>Đưa các thuật toán Xử lý ngôn ngữ tự nhiên (NLP) và Thị giác máy tính vào vận hành trong môi trường doanh nghiệp.</p>
+                    </article>
+                    <article class="card service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-svg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </div>
+                        <h3>Nghiên Cứu UX/UI</h3>
+                        <p>Nghiên cứu hành vi người dùng và mô phỏng các nguyên mẫu (Prototype) đảm bảo tiêu chuẩn công thái học phần mềm.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Bài 4: Parallax Image Banner -->
+            <div class="parallax-banner" data-aos="fade-up">
+                <h2>CÔNG NGHỆ VƯỢT GIỚI HẠN</h2>
+            </div>
+
+            <section id="skills" class="content-section" data-aos="fade-up">
+                <h2 class="section-title">Năng Lực Cốt Lõi</h2>
+                
+                <!-- Bài 6: Skill Bar Animation -->
+                <div class="card">
+                    <div class="skills-bars">
+                        <div class="skill-row">
+                            <div class="skill-info"><span>HTML/CSS/JS (Frontend Core)</span><span>90%</span></div>
+                            <div class="progress-bar"><div class="progress" style="--target: 90%;"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>React & Next.js Ecosystem</span><span>85%</span></div>
+                            <div class="progress-bar"><div class="progress" style="--target: 85%;"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>Python & AI Models</span><span>80%</span></div>
+                            <div class="progress-bar"><div class="progress" style="--target: 80%;"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>Backend (Node.js & Databases)</span><span>75%</span></div>
+                            <div class="progress-bar"><div class="progress" style="--target: 75%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="content-section">
+                <h2 class="section-title" data-aos="fade-up">Hồ Sơ Dự Án Thực Tiễn</h2>
+                <div class="loading-container" id="project-loader">
+                    <div class="loading-spinner"></div>
+                    <p class="loading-text">Hệ thống đang truy xuất dữ liệu dự án...</p>
+                </div>
+
+                <div class="project-gallery">
+                    <article class="card project-card" data-aos="fade-up">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=500&auto=format&fit=crop" alt="Trợ lý toàn năng">
+                        </div>
+                        <div class="project-info">
+                            <span class="badge">Nghiên Cứu Ứng Dụng</span>
+                            <h3>Trợ Lý Ảo Tương Tác</h3>
+                            <p>Một bước tiến trong giao tiếp Người-Máy. Giao diện được thiết kế đặc biệt nhằm tối ưu hóa phản hồi ngôn ngữ tự nhiên từ AI.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="card project-card" data-aos="fade-up">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=500&auto=format&fit=crop" alt="Smart Home">
+                        </div>
+                        <div class="project-info">
+                            <span class="badge">Hệ Thống IoT</span>
+                            <h3>Nền Tảng Nova SmartHome</h3>
+                            <p>Bảng điều khiển trung tâm giúp giám sát và điều hướng tự động hàng chục thiết bị trong hệ sinh thái nhà thông minh.</p>
+                        </div>
+                    </article>
+
+                    <article class="card project-card" data-aos="fade-up">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=500&auto=format&fit=crop" alt="EduViz">
+                        </div>
+                        <div class="project-info">
+                            <span class="badge">Công Nghệ Giáo Dục</span>
+                            <h3>Gia Sư Khảo Thí EduViz</h3>
+                            <p>Mô hình học tập thích ứng ứng dụng Trí tuệ nhân tạo để phân tích lỗ hổng kiến thức và cá nhân hoá lộ trình giáo dục.</p>
+                        </div>
+                    </article>
+
+                    <article class="card project-card" data-aos="fade-up">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=500&auto=format&fit=crop" alt="FaceID">
+                        </div>
+                        <div class="project-info">
+                            <span class="badge">Thị Giác Máy Tính</span>
+                            <h3>Hệ Thống FaceID Định Danh</h3>
+                            <p>Giải pháp điểm danh tự động với độ trễ dưới 0.5s, hiện đang được triển khai và vận hành thực tế tại Phòng Lab AI.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; 2026 Bản quyền thuộc về Nguyễn Minh Anh. Thiết kế với trải nghiệm chuẩn mực.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Bài 1: Floating Action Button (FAB) -->
+    <a href="mailto:nguyenminanhhh5178@gmail.com" class="fab" title="Liên hệ với tôi">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({ duration: 800, once: true, offset: 50, disable: window.innerWidth < 768 });
+
+        // Page Load & Loaders
+        window.addEventListener('load', () => {
+            // Tắt Page Loader mượt mà
+            setTimeout(() => {
+                const pageLoader = document.getElementById('page-loader');
+                if (pageLoader) {
+                    pageLoader.style.opacity = '0';
+                    setTimeout(() => pageLoader.style.display = 'none', 500);
+                }
+            }, 600); 
+
+            // Tắt Project Loader
+            setTimeout(() => {
+                const projectLoader = document.getElementById('project-loader');
+                if (projectLoader) projectLoader.style.display = 'none';
+            }, 1200);
+        });
+
+        // Bài 5: Modern Hamburger Menu Toggle JS
+        const hamburger = document.getElementById('hamburger-menu');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Tự động đóng menu khi chọn mục
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
