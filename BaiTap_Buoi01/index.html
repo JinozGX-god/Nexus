@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bài tập Buổi 1 - Học phần 111101 Thiết kế Web - Nguyễn Hoàng Phúc (MSSV: 25AI111) - Đại học Lạc Hồng.">
+    <title>Bài Tập Buổi 1 | Cấu Trúc HTML Cơ Bản - Nguyễn Hoàng Phúc</title>
+    <style>
+        :root {
+            --bg-color: #0b1120;
+            --surface-color: #1e293b;
+            --text-color: #f1f5f9;
+            --text-muted: #94a3b8;
+            --primary-color: #38bdf8;
+            --border-color: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--surface-color);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        h1 { color: var(--primary-color); font-size: 1.8rem; margin-bottom: 0.5rem; }
+        h2 { color: #e2e8f0; font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem; }
+        p { margin-bottom: 1rem; color: var(--text-muted); }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-muted); }
+        li { margin-bottom: 0.3rem; }
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .author-box img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            color: var(--text-color);
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th { background-color: rgba(56, 189, 248, 0.1); color: var(--primary-color); }
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="author-box">
+            <picture>
+                <source srcset="avatar.webp" type="image/webp">
+                <img src="avatar.jpg" alt="Ảnh chân dung Nguyễn Hoàng Phúc" width="70" height="70">
+            </picture>
+            <div>
+                <h1>Nguyễn Hoàng Phúc - MSSV: 25AI111</h1>
+                <p>Lớp: 25AI111 · Khoa Công Nghệ Thông Tin · Đại học Lạc Hồng</p>
+            </div>
+        </header>
+
+        <section>
+            <h2>Tuần 1: Nhập Môn HTML & Cấu Trúc Tài Liệu Web</h2>
+            <p>Bài thực hành đầu tiên làm quen với cú pháp thẻ HTML5, các thẻ định dạng khối, liên kết, danh sách và bảng biểu chuẩn.</p>
+
+            <h2>Mục Tiêu Đạt Được</h2>
+            <ul>
+                <li>Hiểu rõ cấu trúc tài liệu HTML5 chuẩn với <code>&lt;!DOCTYPE html&gt;</code>, thẻ <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>.</li>
+                <li>Sử dụng thành thạo các thẻ tiêu đề từ <code>&lt;h1&gt;</code> đến <code>&lt;h6&gt;</code> và đoạn văn <code>&lt;p&gt;</code>.</li>
+                <li>Tạo danh sách có thứ tự (<code>&lt;ol&gt;</code>) và không có thứ tự (<code>&lt;ul&gt;</code>).</li>
+                <li>Chèn hình ảnh với thuộc tính <code>alt</code>, <code>width</code>, <code>height</code> đáp ứng chuẩn W3C.</li>
+                <li>Xây dựng bảng dữ liệu hiển thị lịch học và môn học.</li>
+            </ul>
+
+            <h2>Thời Khóa Biểu Học Phần (Demo Table)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Buổi</th>
+                        <th>Chủ Đề Thực Hành</th>
+                        <th>Công Nghệ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Buổi 01</td>
+                        <td>Cấu trúc HTML cơ bản & Typography</td>
+                        <td>HTML5 Core</td>
+                    </tr>
+                    <tr>
+                        <td>Buổi 02</td>
+                        <td>HTML5 Semantic Layout</td>
+                        <td>Semantic Tags</td>
+                    </tr>
+                    <tr>
+                        <td>Buổi 03</td>
+                        <td>CSS Box Model & Styling</td>
+                        <td>CSS3 Basics</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="../BaiTap_Buoi06/index.html" class="back-link">&larr; Quay lại Trang Mục Lục (Index Hub)</a>
+        </section>
+    </main>
+</body>
+</html>
