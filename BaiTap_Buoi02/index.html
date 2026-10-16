@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạp chí Khám Phá - Web Semantic</title>
+</head>
+<body>
+
+    <!--
+        <header>: Khối semantic này đóng vai trò là phần mở đầu của trang web.
+        Nó thường chứa logo, tên trang (Tiêu đề h1) và lời giới thiệu ngắn, giúp định hình ngay lập tức nội dung trang web cho người đọc.
+    -->
+    <header>
+        <h1>Tạp chí Khám Phá Tổng Hợp</h1>
+        <p>Cập nhật thông tin đa chiều về Công nghệ, Thiên nhiên và Văn hóa.</p>
+        
+        <!--
+            <nav>: Khối định hướng (Navigation).
+            Dành riêng cho menu điều hướng chính, giúp người dùng dễ dàng bấm để nhảy đến các chuyên mục lớn trong trang.
+        -->
+        <nav>
+            <ul>
+                <li><a href="#tech">Công nghệ</a></li>
+                <li><a href="#nature">Thiên nhiên</a></li>
+                <li><a href="#culture">Văn hóa & Đời sống</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--
+        <main>: Khối semantic cốt lõi của trang web.
+        Chứa toàn bộ nội dung chính (bài báo, tin tức). Trình đọc màn hình (Screen Reader) sẽ dựa vào thẻ này để đưa người khiếm thị đến thẳng phần nội dung quan trọng nhất.
+    -->
+    <main>
+        
+        <!--
+            <section>: Phân chia trang web thành các phần (khu vực) độc lập mang chủ đề riêng biệt.
+            Ở đây, mỗi section đóng vai trò như một chuyên mục lớn của tạp chí.
+        -->
+        
+        <!-- Section 1: Chuyên mục Công nghệ -->
+        <section id="tech">
+            <h2>Chuyên mục: Công nghệ</h2>
+            
+            <!--
+                <article>: Thẻ đại diện cho một bài viết độc lập, có ý nghĩa trọn vẹn.
+                Nếu copy <article> này sang một trang web khác, nó vẫn có ý nghĩa đầy đủ mà không cần phụ thuộc bối cảnh xung quanh.
+            -->
+            <article>
+                <h3>Trí tuệ nhân tạo (AI) trong đời sống</h3>
+                <p>Ứng dụng của AI đang dần thay đổi hoàn toàn cách chúng ta làm việc, học tập và giải trí mỗi ngày.</p>
+            </article>
+
+            <article>
+                <h3>Tương lai của năng lượng tái tạo</h3>
+                <p>Các công nghệ năng lượng mặt trời và gió ngày càng rẻ và dễ tiếp cận hơn trên toàn cầu.</p>
+            </article>
+        </section>
+
+        <!-- Section 2: Chuyên mục Thiên nhiên -->
+        <section id="nature">
+            <h2>Chuyên mục: Thiên nhiên kỳ thú</h2>
+            <article>
+                <h3>Sự phục hồi của rừng Amazon</h3>
+                <p>Những nỗ lực bảo tồn mới nhất đang cho thấy tín hiệu khả quan trong việc duy trì đa dạng sinh học tại đây.</p>
+            </article>
+        </section>
+
+        <!-- Section 3: Chuyên mục Văn hóa -->
+        <section id="culture">
+            <h2>Chuyên mục: Văn hóa & Đời sống</h2>
+            <article>
+                <h3>Giao thoa văn hóa thời kỳ số</h3>
+                <p>Cách giới trẻ hiện đại tìm về văn hóa truyền thống thông qua các nền tảng mạng xã hội và nghệ thuật đương đại.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <!--
+        <footer>: Khối chân trang.
+        Được đặt ở cuối trang web, là nơi cung cấp các thông tin phụ như bản quyền, thông tin liên hệ, hoặc sơ đồ trang web.
+    -->
+    <footer>
+        <p>&copy; 2026 Tạp chí Khám Phá. Dự án mẫu để học cấu trúc HTML Semantic.</p>
+        <p>Liên hệ: info@tapchikhampha.vn</p>
+    </footer>
+
+</body>
+</html>
