@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang Portfolio cá nhân - Mạc Thùy Thiên Ân - Lập trình viên AI & Computer Vision">
+    <meta name="author" content="Mạc Thùy Thiên Ân - MSSV: 25AI111">
+    <title>Portfolio Cá Nhân | Mạc Thùy Thiên Ân - AI Engineer</title>
+</head>
+
+<body>
+
+    <!-- THẺ <header>: Khu vực đầu trang, chứa thông tin nhận diện thương hiệu và thanh điều hướng -->
+    <header>
+        <h1>Mạc Thùy Thiên Ân - AI Developer Portfolio</h1>
+
+        <!-- THẺ <nav>: Định nghĩa tập hợp các liên kết điều hướng chính của trang -->
+        <nav>
+            <ul>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- THẺ <main>: Chứa toàn bộ nội dung chính, độc lập và quan trọng nhất của trang web (chỉ dùng 1 lần) -->
+    <main>
+
+        <!-- SECTION 1: Giới thiệu bản thân -->
+        <!-- THẺ <section>: Nhóm các nội dung có cùng một chủ đề xác định -->
+        <section id="about">
+            <h2>Giới Thiệu Bản Thân</h2>
+
+            <!-- THẺ <figure> & <figcaption>: Định nghĩa khối hình ảnh/minh họa có đi kèm chú thích -->
+            <figure>
+                <img src="avatar.jpg" onerror="this.onerror=null; this.src='../avatar.jpg';" alt="Ảnh chân dung Mạc Thùy Thiên Ân" width="150" height="150">
+                <figcaption>Sinh viên ngành Trí tuệ Nhân tạo - Trường Đại học Lạc Hồng (LHU)</figcaption>
+            </figure>
+
+            <p>
+                Chào bạn! Mình là <strong>Mạc Thùy Thiên Ân</strong>, hiện là sinh viên chuyên ngành Trí tuệ Nhân tạo (Khoa Công Nghệ Thông Tin) tại Trường Đại học Lạc Hồng (LHU). 
+                Mình có niềm đam mê mạnh mẽ với lĩnh vực Học máy (Machine Learning), Thị giác máy tính (Computer Vision) và Phát triển ứng dụng Web tương tác (Front-end & UI/UX). 
+                Mục tiêu học tập của mình là áp dụng công nghệ AI vào thực tiễn, kiến tạo những hệ thống phần mềm thông minh, thân thiện và tối ưu trải nghiệm người dùng.
+            </p>
+        </section>
+
+        <!-- SECTION 2: Các dự án nổi bật -->
+        <section id="projects">
+            <h2>Dự Án Nổi Bật</h2>
+
+            <!-- THẺ <article>: Định nghĩa một khối nội dung độc lập, có thể đứng riêng biệt (ví dụ: một dự án) -->
+            <article>
+                <h3>🤖 Hệ Thống Phân Loại Hình Ảnh Theo Thời Gian Thực (Smart Image Classifier)</h3>
+                <p>Mô tả: Ứng dụng mô hình Deep Learning tích hợp Convolutional Neural Network (CNN) nhận diện và phân loại đối tượng chính xác qua webcam với độ trễ thấp.</p>
+                <p>Công nghệ: Python, TensorFlow, OpenCV, Flask</p>
+            </article>
+
+            <article>
+                <h3>🎙️ Trợ Lý Ảo Nhận Diện Giọng Nói Tiếng Việt (Vietnamese AI Voice Assistant)</h3>
+                <p>Mô tả: Xây dựng trợ lý đàm thoại thông minh tương tác bằng giọng nói tiếng Việt, chuyển đổi âm thanh sang văn bản và xử lý ngữ cảnh tự động.</p>
+                <p>Công nghệ: Python, PyTorch, Whisper, FastAPI</p>
+            </article>
+
+            <article>
+                <h3>📊 Hệ Thống Phân Tích & Gợi Ý Lộ Trình Học Tập AI</h3>
+                <p>Mô tả: Thuật toán Collaborative Filtering phân tích dữ liệu kỹ năng để đề xuất khóa học và học phần chuyên ngành cá nhân hóa cho sinh viên.</p>
+                <p>Công nghệ: Python, Scikit-learn, Pandas, Data Visualization</p>
+            </article>
+        </section>
+
+        <!-- SECTION 3: Kỹ năng chuyên môn -->
+        <section id="skills">
+            <h2>Kỹ Năng Chuyên Môn</h2>
+            <ul>
+                <li>Ngôn ngữ & Thư viện: Python, C++, HTML5/CSS3, OpenCV, TensorFlow, PyTorch</li>
+                <li>Phát triển Web: HTML5 Semantic, Responsive Design, CSS Grid, Flexbox, JavaScript</li>
+                <li>Công cụ thiết kế & UI/UX: Figma (Wireframing, Component Systems)</li>
+                <li>Quản lý mã nguồn: Git, GitHub Workflow, CI/CD cơ bản</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- THẺ <aside>: Chứa nội dung phụ, liên quan gián tiếp đến nội dung chính (Sidebar/Thông tin nhanh) -->
+    <aside id="contact">
+        <h3>Thông Tin Liên Hệ Nhanh</h3>
+        <p>Email: <a href="mailto:thuythienan.ai@gmail.com">thuythienan.ai@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/MacThuyThienAn" target="_blank" rel="noopener noreferrer">github.com/MacThuyThienAn</a></p>
+        <p>Địa chỉ: Khoa Công Nghệ Thông Tin · Đại học Lạc Hồng, Đồng Nai</p>
+    </aside>
+
+    <!-- THẺ <footer>: Định nghĩa chân trang, chứa bản quyền, mốc thời gian và các liên kết phụ -->
+    <footer>
+        <p>&copy; <time datetime="2026">2026</time> Mạc Thùy Thiên Ân (MSSV: 25AI111). Tất cả quyền được bảo lưu.</p>
+        <!-- THẺ <time>: Giúp máy tính và công cụ tìm kiếm đọc chính xác dữ liệu mốc thời gian -->
+    </footer>
+
+</body>
+
+</html>
