@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="t6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#g6)"/>
+  <rect x="260" y="90" width="280" height="180" rx="16" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
+  <path d="M 370 170 L 390 190 L 435 145" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="240" fill="url(#t6)" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">W3C 0 Errors · Sticky Footer</text>
+  <text x="400" y="370" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">BUỔI 06: INDEX HUB &amp; W3C VALIDATION</text>
+  <text x="400" y="405" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="15" text-anchor="middle">Mạc Thùy Thiên Ân · 25AI111</text>
+</svg>

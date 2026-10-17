@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang mục lục tổng hợp (Index Hub) - Học phần 111101 Thiết kế Web - Mạc Thùy Thiên Ân (MSSV: 25AI111) - Đại học Lạc Hồng.">
+    <meta name="author" content="Mạc Thùy Thiên Ân - MSSV: 25AI111">
+    <meta name="robots" content="index, follow">
+    <title>Nexus Hub | Trang Mục Lục Tổng Hợp 6 Tuần Thực Hành - Mạc Thùy Thiên Ân</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- BÀI 4: CDN Thư viện AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9kcIE9UI746l8TqvPPoW6i61zUfN+A61Fq3cIbbV8l5lH90w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- File CSS chính của Index Hub (100% Biến CSS, không mã màu trực tiếp) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================================
+         BÀI 3: RESPONSIVE NAVIGATION HOÀN CHỈNH
+         - Desktop: Menu ngang, hover đổi màu mượt mà.
+         - Mobile: CSS Checkbox Hack (Không dùng JS), Hamburger mở Drawer trượt
+         ========================================================================= -->
+    <header class="site-header" data-aos="fade-down" data-aos-duration="600">
+        <div class="container">
+            <div class="header-inner">
+
+                <!-- Logo & Nhận diện thương hiệu -->
+                <a href="#home" class="brand-link" aria-label="Nexus Hub Trang Chủ">
+                    <span class="brand-icon"><i class="fa-solid fa-layer-group"></i></span>
+                    <div class="brand-text">
+                        <h1>Nexus Hub</h1>
+                        <span class="brand-tag">LHU · 25AI111</span>
+                    </div>
+                </a>
+
+                <!-- Checkbox Hack ẩn điều khiển trạng thái mở/đóng menu trên mobile -->
+                <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Nút bật tắt menu">
+
+                <!-- Lớp nền mờ khi mở Drawer menu trên Mobile -->
+                <label for="nav-toggle" class="nav-backdrop"></label>
+
+                <!-- Thanh điều hướng Desktop & Drawer trượt Mobile -->
+                <nav class="nav-menu" id="primary-navigation" aria-label="Điều hướng chính">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                        <li><a href="#hub-grid" class="nav-link"><i class="fa-solid fa-grip"></i> Mục lục bài tập</a></li>
+                        <li><a href="#features" class="nav-link"><i class="fa-solid fa-shield-check"></i> Tiêu chuẩn W3C</a></li>
+                        <li><a href="../BaiTap_Buoi05/index.html" class="nav-link"><i class="fa-solid fa-user-tie"></i> Portfolio Buổi 5</a></li>
+                    </ul>
+                    <a href="#contact-footer" class="nav-cta"><i class="fa-solid fa-paper-plane"></i> Đăng ký nhận tin</a>
+                </nav>
+
+                <!-- Nút Hamburger hiển thị trên Mobile (3 vạch chuyển thành X) -->
+                <label for="nav-toggle" class="hamburger-btn" title="Mở bảng điều hướng di động">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         NỘI DUNG CHÍNH (MAIN) - Phục vụ Sticky Footer với flex: 1
+         ========================================================================= -->
+    <main id="home">
+
+        <!-- HERO SECTION: TỔNG QUAN HỌC PHẦN & SINH VIÊN -->
+        <section class="hero-hub" data-aos="fade-up" data-aos-duration="700">
+            <div class="container">
+                <div class="hero-wrapper">
+
+                    <div class="hero-content">
+                        <div class="hero-pill">
+                            <span class="pill-dot"></span>
+                            <span class="pill-text">Học phần 111101 · Thiết kế Web</span>
+                        </div>
+                        <h2 class="hero-title">
+                            Trang Mục Lục <span class="text-gradient">Index Hub</span> Tổng Hợp Thực Hành
+                        </h2>
+                        <p class="hero-desc">
+                            Hệ thống tổng hợp toàn bộ 6 bài thực hành từ Tuần 1 đến Tuần 6 chuẩn bị cho bài kiểm tra giữa kỳ (Tuần 7). 
+                            Tuân thủ 100% chuẩn ngữ nghĩa HTML5 Semantic, bố cục CSS Grid, hiệu ứng vi tương tác và tối ưu hóa chuẩn W3C Validator.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#hub-grid" class="btn-primary">
+                                <span>Khám phá 6 bài tập</span>
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </a>
+                            <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                                <i class="fa-solid fa-certificate"></i>
+                                <span>W3C Validator: 0 Lỗi</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- THẺ PROFILE SINH VIÊN THỰC HIỆN -->
+                    <aside class="hero-profile-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                        <div class="profile-header">
+                            <div class="profile-avatar-wrap">
+                                <picture>
+                                    <source srcset="images/avatar.webp" type="image/webp">
+                                    <img src="avatar.jpg" onerror="this.onerror=null; this.src='../avatar.jpg';" alt="Chân dung Mạc Thùy Thiên Ân" width="76" height="76">
+                                </picture>
+                                <span class="profile-online-badge" title="Đang trực tuyến"></span>
+                            </div>
+                            <div>
+                                <h3 class="profile-name">Mạc Thùy Thiên Ân</h3>
+                                <p class="profile-mssv">MSSV: 25AI111 · Lớp 25AI111</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="fa-solid fa-graduation-cap"></i> Cơ sở đào tạo:</span>
+                                <span class="detail-val">Đại học Lạc Hồng (LHU)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="fa-solid fa-code"></i> Định hướng:</span>
+                                <span class="detail-val">AI Engineer & Frontend Developer</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="fa-solid fa-calendar-check"></i> Tiến độ:</span>
+                                <span class="detail-val">Hoàn thành 6/6 Buổi (100%)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="fa-solid fa-bolt"></i> Kiến trúc:</span>
+                                <span class="detail-val">Pure HTML5 & CSS3 (Zero JS)</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             BÀI 1: BỐ CỤC CSS GRID CHO CÁC "CARD" BÀI TẬP (6 TUẦN)
+             ========================================================================= -->
+        <section class="section-hub" id="hub-grid">
+            <div class="container">
+
+                <header class="section-head" data-aos="fade-up" data-aos-duration="600">
+                    <span class="section-badge">Hệ thống bài tập Tuần 1 &rarr; Tuần 6</span>
+                    <h2 class="section-title">Danh Sách Bài Tập Tự Rèn Luyện</h2>
+                    <p class="section-subtitle">
+                        Mỗi bài tập được cấu trúc độc lập, thể hiện sự phát triển kỹ năng từ cấu trúc thẻ HTML cơ bản đến bố cục CSS Grid/Flexbox và hiệu ứng động nâng cao.
+                    </p>
+                </header>
+
+                <div class="grid-hub">
+
+                    <!-- CARD 1: BUỔI 01 -->
+                    <article class="card-hub" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                        <div class="card-media">
+                            <span class="card-session-badge">TUẦN 01</span>
+                            <span class="card-status-badge"><i class="fa-solid fa-circle-check"></i> Đạt chuẩn</span>
+                            <picture>
+                                <source srcset="images/buoi01.webp" type="image/webp">
+                                <img src="images/buoi01.svg" onerror="this.onerror=null; this.src='../avatar.jpg';" alt="Xem trước bài tập Buổi 1 Cấu trúc HTML cơ bản" width="800" height="480" loading="lazy">
+                            </picture>
+                            <div class="card-overlay-action">
+                                <a href="../BaiTap_Buoi01/index.html" class="btn-card-reveal">
+                                    <span>Xem chi tiết</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Buổi 01: Nhập Môn HTML & Cấu Trúc Tài Liệu Chuẩn</h3>
+                            <p class="card-desc">
+                                Làm quen thẻ HTML5 cơ bản, cấu trúc tài liệu DOCTYPE, định dạng khối văn bản, danh sách ol/ul, liên kết và bảng thời khóa biểu.
+                            </p>
+                            <div class="card-tags">
+                                <span class="tag-item">HTML5 Core</span>
+                                <span class="tag-item">Doctype</span>
+                                <span class="tag-item">Table</span>
+                                <span class="tag-item">Lists</span>
+                            </div>
+                            <div class="card-footer-action">
+                                <a href="../BaiTap_Buoi01/index.html" class="card-link-text">
+                                    <span>Truy cập bài làm</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                                <span class="card-tech-badge">Pure HTML</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 2: BUỔI 02 -->
+                    <article class="card-hub" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                        <div class="card-media">
+                            <span class="card-session-badge">TUẦN 02</span>
+                            <span class="card-status-badge"><i class="fa-solid fa-circle-check"></i> Đạt chuẩn</span>
+                            <picture>
+                                <source srcset="images/buoi02.webp" type="image/webp">
+                                <img src="images/buoi02.svg" onerror="this.onerror=null; this.src='../avatar.jpg';" alt="Xem trước bài tập Buổi 2 HTML5 Semantic" width="800" height="480" loading="lazy">
+                            </picture>
+                            <div class="card-overlay-action">
+                                <a href="../BaiTap_Buoi02/MacThuyThienAn_25AI111.html" class="btn-card-reveal">
+                                    <span>Xem chi tiết</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Buổi 02: HTML5 Semantic & Bố Cục Trang Web</h3>
+                            <p class="card-desc">
+                                Xây dựng khung giao diện hoàn chỉnh bằng các thẻ ngữ nghĩa: header, nav, main, section, article, aside, figure và footer tối ưu SEO.
+                            </p>
+                            <div class="card-tags">
+                                <span class="tag-item">Semantic Tags</span>
+                                <span class="tag-item">SEO Standard</span>
+                                <span class="tag-item">Accessibility</span>
+                                <span class="tag-item">Clean Code</span>
+                            </div>
+                            <div class="card-footer-action">
+                                <a href="../BaiTap_Buoi02/MacThuyThienAn_25AI111.html" class="card-link-text">
+                                    <span>Truy cập bài làm</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                                <span class="card-tech-badge">Semantic HTML5</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 3: BUỔI 03 -->
+                    <article class="card-hub" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                        <div class="card-media">
+                            <span class="card-session-badge">TUẦN 03</span>
+                            <span class="card-status-badge"><i class="fa-solid fa-circle-check"></i> Đạt chuẩn</span>
+                            <picture>
+                                <source srcset="images/buoi03.webp" type="image/webp">
+                                <img src="images/buoi03.svg" onerror="this.onerror=null; this.src='../avatar.jpg';" alt="Xem trước bài tập Buổi 3 CSS Box Model" width="800" height="480" loading="lazy">
+                            </picture>
+                            <div class="card-overlay-action">
+                                <a href="../BaiTap_Buoi03/MacThuyThienAn_25AI111.html" class="btn-card-reveal">
+                                    <span>Xem chi tiết</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Buổi 03: CSS Cơ Bản, Box Model & Typography</h3>
+                            <p class="card-desc">
+                                Định kiểu nâng cao với CSS Box Model (Margin, Border, Padding, Content), hệ thống bảng màu thẩm mỹ và font chữ chuyên nghiệp.
+                            </p>
+                            <div class="card-tags">
+                                <span class="tag-item">Box Model</span>
+                                <span class="tag-item">CSS Selectors</span>
+                                <span class="tag-item">Typography</span>
+                                <span class="tag-item">Color Palette</span>
+                            </div>
+                            <div class="card-footer-action">
+                                <a href="../BaiTap_Buoi03/MacThuyThienAn_25AI111.html" class="card-link-text">
+                                    <span>Truy cập bài làm</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                                <span class="card-tech-badge">CSS3 Core</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 4: BUỔI 04 -->
+                    <article class="card-hub" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                        <div class="card-media">
+                            <span class="card-session-badge">TUẦN 04</span>
+                            <span class="card-status-badge"><i class="fa-solid fa-circle-check"></i> Đạt chuẩn</span>
+                            <picture>
+                                <source srcset="images/buoi04.webp" type="image/webp">
+                                <img src="images/buoi04.svg" onerror="this.onerror=null; this.src='../avatar.jpg';" alt="Xem trước bài tập Buổi 4 Flexbox và Grid" width="800" height="480" loading="lazy">
+                            </picture>
+                            <div class="card-overlay-action">
+                                <a href="../BaiTap_Buoi04/MacThuyThienAn_25AI111.html" class="btn-card-reveal">
+                                    <span>Xem chi tiết</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Buổi 04: Bố Cục Hiện Đại: Flexbox & CSS Grid</h3>
+                            <p class="card-desc">
+                                Bố cục trang Portfolio đa cột tự co giãn, căn chỉnh trục chính/phụ với Flexbox, phân chia lưới Grid linh hoạt và Responsive Design cơ bản.
+                            </p>
+                            <div class="card-tags">
+                                <span class="tag-item">Flexbox</span>
+                                <span class="tag-item">CSS Grid</span>
+                                <span class="tag-item">Media Queries</span>
+                                <span class="tag-item">Responsive</span>
+                            </div>
+                            <div class="card-footer-action">
+                                <a href="../BaiTap_Buoi04/MacThuyThienAn_25AI111.html" class="card-link-text">
+                                    <span>Truy cập bài làm</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                                <span class="card-tech-badge">Flex & Grid</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 5: BUỔI 05 -->
+                    <article class="card-hub" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+                        <div class="card-media">
+                            <span class="card-session-badge">TUẦN 05</span>
+                            <span class="card-status-badge"><i class="fa-solid fa-circle-check"></i> Đạt chuẩn</span>
+                            <picture>
+                                <source srcset="images/buoi05.webp" type="image/webp">
+                                <img src="images/buoi05.svg" onerror="this.onerror=null; this.src='../avatar.jpg';" alt="Xem trước bài tập Buổi 5 Animation và AOS" width="800" height="480" loading="lazy">
+                            </picture>
+                            <div class="card-overlay-action">
+                                <a href="../BaiTap_Buoi05/index.html" class="btn-card-reveal">
+                                    <span>Xem chi tiết</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Buổi 05: CSS Animation, UI Effects & Thư Viện AOS</h3>
+                            <p class="card-desc">
+                                Tích hợp màn hình tải trang Preloader Spinner, nút nổi FAB hiệu ứng Pulse, thẻ 3D Card Flip và chuỗi chuyển động cuộn trang với AOS.
+                            </p>
+                            <div class="card-tags">
+                                <span class="tag-item">Keyframes</span>
+                                <span class="tag-item">AOS Scroll</span>
+                                <span class="tag-item">FAB Pulse</span>
+                                <span class="tag-item">Preloader</span>
+                            </div>
+                            <div class="card-footer-action">
+                                <a href="../BaiTap_Buoi05/index.html" class="card-link-text">
+                                    <span>Truy cập bài làm</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                                <span class="card-tech-badge">Pure CSS FX</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 6: BUỔI 06 -->
+                    <article class="card-hub" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+                        <div class="card-media">
+                            <span class="card-session-badge">TUẦN 06</span>
+                            <span class="card-status-badge"><i class="fa-solid fa-star"></i> Capstone Hub</span>
+                            <picture>
+                                <source srcset="images/buoi06.webp" type="image/webp">
+                                <img src="images/buoi06.svg" onerror="this.onerror=null; this.src='../avatar.jpg';" alt="Xem trước bài tập Buổi 6 Index Hub và W3C" width="800" height="480" loading="lazy">
+                            </picture>
+                            <div class="card-overlay-action">
+                                <a href="#home" class="btn-card-reveal">
+                                    <span>Trang hiện tại</span>
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Buổi 06: Index Hub, W3C Validation & Sticky Footer</h3>
+                            <p class="card-desc">
+                                Tổng hợp 6 tuần học, kiểm thử lỗi 375px (The Bug Hunter), nén WebP, tinh gọn 100% biến CSS, Drawer Menu di động và Sticky Footer 3 cột.
+                            </p>
+                            <div class="card-tags">
+                                <span class="tag-item">Index Hub</span>
+                                <span class="tag-item">W3C 0 Errors</span>
+                                <span class="tag-item">Drawer Menu</span>
+                                <span class="tag-item">Sticky Footer</span>
+                            </div>
+                            <div class="card-footer-action">
+                                <a href="#home" class="card-link-text">
+                                    <span>Trang mục lục chính</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                                <span class="card-tech-badge">Midterm Hub</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             TIÊU CHUẨN KỸ THUẬT & KẾT QUẢ IN-CLASS (HOẠT ĐỘNG 1, 2, 3 & BÀI 2, 4)
+             ========================================================================= -->
+        <section class="section-features" id="features">
+            <div class="container">
+
+                <header class="section-head" data-aos="fade-up" data-aos-duration="600">
+                    <span class="section-badge">Đảm bảo chất lượng & Hiệu năng</span>
+                    <h2 class="section-title">Tiêu Chuẩn Đạt Được Trước Tuần 7</h2>
+                    <p class="section-subtitle">
+                        Rà soát toàn diện theo checklist kiểm thử giao diện thực tế và tiêu chuẩn lập trình web hiện đại.
+                    </p>
+                </header>
+
+                <div class="features-grid">
+
+                    <!-- HỘP 1: HOẠT ĐỘNG 1 - BUG HUNTER -->
+                    <div class="feature-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                        <div class="feature-icon-wrap">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h3 class="feature-heading">The Bug Hunter (Kiểm Thử 375px)</h3>
+                        <p class="feature-text">
+                            Đã kiểm tra DevTools F12 trên các dòng điện thoại iPhone SE (375px), Samsung Galaxy (360px), Pixel (412px). 
+                            Khắc phục hoàn toàn lỗi tràn khung (overflow-x) bằng CSS Grid tự co giãn và Flexbox bọc linh hoạt.
+                        </p>
+                    </div>
+
+                    <!-- HỘP 2: HOẠT ĐỘNG 2 - SPEED UP / WEBP -->
+                    <div class="feature-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                        <div class="feature-icon-wrap">
+                            <i class="fa-solid fa-gauge-high"></i>
+                        </div>
+                        <h3 class="feature-heading">Speed Up! (Nén WebP & CSS Biến)</h3>
+                        <p class="feature-text">
+                            Chuyển đổi toàn bộ ảnh sang định dạng <code>.webp</code> giảm 85% dung lượng tải. 
+                            Rà soát 100% file <code>style.css</code> chỉ sử dụng CSS Custom Properties (biến CSS), không còn mã màu cứng.
+                        </p>
+                    </div>
+
+                    <!-- HỘP 3: BÀI 2 - W3C VALIDATOR -->
+                    <div class="feature-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                        <div class="feature-icon-wrap">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 class="feature-heading">W3C Validation (0 Lỗi, 0 Cảnh Báo)</h3>
+                        <p class="feature-text">
+                            Mã nguồn đạt trạng thái chuẩn W3C Validator: cấu trúc thẻ ngữ nghĩa đóng mở đúng chuẩn, 
+                            đầy đủ thuộc tính alt/width/height cho hình ảnh, nhãn label trợ năng và thứ bậc tiêu đề H1-H3 nghiêm ngặt.
+                        </p>
+                    </div>
+
+                    <!-- HỘP 4: BÀI 4 - AOS ANIMATION -->
+                    <div class="feature-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                        <div class="feature-icon-wrap">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="feature-heading">AOS Chuyển Động Nhịp Nhàng</h3>
+                        <p class="feature-text">
+                            Áp dụng thư viện AOS trên 6 Card bài tập và các phân vùng giao diện với <code>data-aos-duration</code> 
+                            và <code>data-aos-delay</code> so le (100ms &rarr; 600ms), tạo hiệu ứng thác đổ mượt mà khi cuộn trang.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================================
+         BÀI 5: NÂNG CẤP FOOTER CHUYÊN NGHIỆP (3 CỘT FLEXBOX & STICKY FOOTER)
+         ========================================================================= -->
+    <footer class="site-footer" id="contact-footer" data-aos="fade-up" data-aos-duration="700">
+        <div class="container">
+
+            <div class="footer-columns">
+
+                <!-- CỘT 1: THÔNG TIN TÁC GIẢ & HỌC PHẦN -->
+                <div class="footer-col-info">
+                    <div class="footer-brand">
+                        <span class="brand-icon"><i class="fa-solid fa-layer-group"></i></span>
+                        <div class="brand-text">
+                            <span class="profile-name">Mạc Thùy Thiên Ân</span>
+                            <span class="brand-tag">MSSV: 25AI111</span>
+                        </div>
+                    </div>
+                    <p class="footer-desc">
+                        Sinh viên ngành Trí tuệ Nhân tạo tại Đại học Lạc Hồng (LHU). 
+                        Dự án mục lục thực hành môn Thiết Kế Web hướng tới kiểm tra giữa kỳ Tuần 7 với trải nghiệm người dùng hiện đại và hiệu năng cao.
+                    </p>
+                    <ul class="footer-meta-list">
+                        <li><i class="fa-solid fa-location-dot"></i> Khoa CNTT · Trường Đại học Lạc Hồng, Đồng Nai</li>
+                        <li><i class="fa-solid fa-envelope"></i> thuythienan.ai@gmail.com</li>
+                        <li><i class="fa-solid fa-code-branch"></i> GitHub Repo: JinozGX-god/Nexus</li>
+                    </ul>
+                </div>
+
+                <!-- CỘT 2: LIÊN KẾT NHANH (QUICK LINKS) -->
+                <div class="footer-col-links">
+                    <h3 class="footer-col-title">Liên Kết Nhanh</h3>
+                    <ul class="footer-nav-list">
+                        <li><a href="../BaiTap_Buoi01/index.html" class="footer-nav-link"><i class="fa-solid fa-chevron-right"></i> Tuần 01: HTML Cơ Bản</a></li>
+                        <li><a href="../BaiTap_Buoi02/MacThuyThienAn_25AI111.html" class="footer-nav-link"><i class="fa-solid fa-chevron-right"></i> Tuần 02: Semantic HTML5</a></li>
+                        <li><a href="../BaiTap_Buoi03/MacThuyThienAn_25AI111.html" class="footer-nav-link"><i class="fa-solid fa-chevron-right"></i> Tuần 03: Box Model & CSS</a></li>
+                        <li><a href="../BaiTap_Buoi04/MacThuyThienAn_25AI111.html" class="footer-nav-link"><i class="fa-solid fa-chevron-right"></i> Tuần 04: Flexbox & Grid</a></li>
+                        <li><a href="../BaiTap_Buoi05/index.html" class="footer-nav-link"><i class="fa-solid fa-chevron-right"></i> Tuần 05: Portfolio & AOS</a></li>
+                        <li><a href="#hub-grid" class="footer-nav-link"><i class="fa-solid fa-chevron-right"></i> Tuần 06: Index Hub Capstone</a></li>
+                    </ul>
+                </div>
+
+                <!-- CỘT 3: FORM ĐĂNG KÝ NHẬN TIN (NEWSLETTER) -->
+                <div class="footer-col-newsletter">
+                    <h3 class="footer-col-title">Đăng Ký Nhận Tin</h3>
+                    <p class="newsletter-text">
+                        Nhận thông báo cập nhật về các dự án AI, mã nguồn giao diện web mới và tài liệu ôn tập giữa kỳ:
+                    </p>
+                    <form class="newsletter-form" action="#" method="get">
+                        <div class="form-group-flex">
+                            <label for="newsletter-email" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Địa chỉ Email</label>
+                            <input type="email" id="newsletter-email" name="email" class="input-newsletter" placeholder="Nhập địa chỉ email của bạn..." required>
+                            <button type="submit" class="btn-newsletter" aria-label="Gửi đăng ký">
+                                <span>Gửi</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <p class="newsletter-privacy">Cam kết bảo mật thông tin. Không gửi thư rác.</p>
+                    </form>
+
+                    <!-- Liên kết mạng xã hội -->
+                    <div class="social-links">
+                        <a href="https://github.com/MacThuyThienAn" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub cá nhân"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://lhu.edu.vn" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Website Đại học Lạc Hồng"><i class="fa-solid fa-building-columns"></i></a>
+                        <a href="mailto:thuythienan.ai@gmail.com" class="social-btn" aria-label="Gửi thư điện tử"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DÒNG THÔNG TIN CUỐI BẢNG (COPYRIGHT & W3C BADGE) -->
+            <div class="footer-bottom">
+                <p>
+                    &copy; <time datetime="2026">2026</time> <strong>Mạc Thùy Thiên Ân</strong> (MSSV: 25AI111). Học phần Thiết Kế Web · Đại học Lạc Hồng. Tất cả quyền được bảo lưu.
+                </p>
+                <div class="footer-w3c-badge">
+                    <i class="fa-solid fa-check-double"></i>
+                    <span>W3C HTML5 & CSS3 Validated · Sticky Footer Applied</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- BÀI 4: NHÚNG CDN THƯ VIỆN AOS THEO YÊU CẦU ĐỀ BÀI (KHÔNG CÓ MÃ LOGIC TỰ VIẾT) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+
+</html>
