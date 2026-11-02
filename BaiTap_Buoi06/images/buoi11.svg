@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <linearGradient id="g11" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="t11" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#g11)"/>
+
+  <!-- Portfolio UI Mockup -->
+  <rect x="180" y="70" width="440" height="220" rx="14" fill="#030712" stroke="#38bdf8" stroke-width="2" opacity="0.95"/>
+  <rect x="180" y="70" width="440" height="34" rx="14" fill="#111827"/>
+  <circle cx="204" cy="87" r="5" fill="#ef4444"/>
+  <circle cx="220" cy="87" r="5" fill="#f59e0b"/>
+  <circle cx="236" cy="87" r="5" fill="#10b981"/>
+  <text x="400" y="92" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">Portfolio Capstone · Google Sheets &amp; Theme Switcher</text>
+
+  <!-- Content Mockup inside Card -->
+  <circle cx="240" cy="155" r="28" fill="#38bdf8" opacity="0.2"/>
+  <circle cx="240" cy="155" r="22" fill="#38bdf8"/>
+  <text x="285" y="145" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="15" font-weight="bold">Mạc Thùy Thiên Ân</text>
+  <text x="285" y="165" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12">AI Developer &amp; Web Architect</text>
+  
+  <rect x="205" y="200" width="120" height="65" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1"/>
+  <text x="265" y="235" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">Project AI Model</text>
+
+  <rect x="340" y="200" width="120" height="65" rx="8" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="1"/>
+  <text x="400" y="235" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">Web Fullstack</text>
+
+  <rect x="475" y="200" width="120" height="65" rx="8" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1"/>
+  <text x="535" y="235" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">Mobile App</text>
+
+  <!-- Titles -->
+  <text x="400" y="335" fill="url(#t11)" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">PORTFOLIO CAPSTONE · 6 BÀI TẬP TOÀN DIỆN</text>
+  <text x="400" y="375" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" text-anchor="middle">BUỔI 11: BẢN SẮC CÁ NHÂN &amp; DỮ LIỆU ĐỘNG</text>
+  <text x="400" y="415" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-size="15" text-anchor="middle">Mạc Thùy Thiên Ân · MSSV: 25AI111 · Đại học Lạc Hồng</text>
+</svg>
