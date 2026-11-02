@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bài tập kết hợp Buổi 09 & Buổi 10: Vòng lặp, Hàm, Thao tác DOM & Sự kiện tương tác - Mạc Thùy Thiên Ân (MSSV: 25AI111) - Đại học Lạc Hồng.">
+    <meta name="author" content="Mạc Thùy Thiên Ân - MSSV: 25AI111">
+    <meta name="robots" content="index, follow">
+    <title>Buổi 09 & 10: Vòng Lặp, Hàm & DOM Tương Tác | Mạc Thùy Thiên Ân - 25AI111</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- File CSS chính của Buổi 09 & 10 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================================
+         1. SITE HEADER & NAVIGATION
+         ========================================================================= -->
+    <header class="site-header" id="topHeader">
+        <div class="container">
+            <div class="header-inner">
+
+                <!-- Logo Thương hiệu -->
+                <a href="#hero" class="brand-link" aria-label="Nexus Buổi 09 & 10 Trang Chủ">
+                    <span class="brand-icon-dual">JS 09+10</span>
+                    <div class="brand-text">
+                        <h1>Nexus JS Lab</h1>
+                        <span class="brand-tag">LHU · Buổi 09 &amp; 10 · 25AI111</span>
+                    </div>
+                </a>
+
+                <!-- Điều hướng Desktop -->
+                <nav class="nav-desktop" aria-label="Điều hướng chính">
+                    <ul class="nav-list">
+                        <li><a href="#terminal" class="nav-link"><i class="fa-solid fa-terminal"></i> Console F12</a></li>
+                        <li><a href="#sec-buoi09" class="nav-link"><i class="fa-solid fa-repeat"></i> Buổi 09 (Loop &amp; Fn)</a></li>
+                        <li><a href="#sec-buoi10" class="nav-link"><i class="fa-solid fa-cubes"></i> Buổi 10 (DOM)</a></li>
+                        <li><a href="#b9-homework" class="nav-link"><i class="fa-solid fa-list-check"></i> Bài Tập B9</a></li>
+                        <li><a href="#b10-homework" class="nav-link"><i class="fa-solid fa-sliders"></i> Bài Tập B10</a></li>
+                    </ul>
+                    <button type="button" id="toggle-btn" class="nav-btn-hub" onclick="toggleDarkMode()" style="cursor: pointer; border: none;">
+                        <i class="fa-solid fa-sun"></i> Đổi Theme
+                    </button>
+                    <a href="../index.html" class="nav-btn-hub">
+                        <i class="fa-solid fa-arrow-left"></i> Nexus Hub
+                    </a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- =========================================================================
+             2. HERO SECTION: TỔNG QUAN BUỔI 09 & BUỔI 10
+             ========================================================================= -->
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <div class="hero-card">
+
+                    <div class="hero-content">
+                        <div class="hero-badge-wrap">
+                            <span class="hero-badge hero-badge-b9"><i class="fa-solid fa-repeat"></i> Buổi 09: Vòng lặp &amp; Hàm (Trang 65)</span>
+                            <span class="hero-badge hero-badge-b10"><i class="fa-solid fa-computer-mouse"></i> Buổi 10: Tương tác DOM &amp; Sự kiện (Trang 68)</span>
+                        </div>
+
+                        <h2 class="hero-title">
+                            Bộ Thực Hành: <span class="t-b9">Vòng Lặp, Hàm</span> &amp; <span class="t-b10">Thao Tác DOM Trực Quan</span>
+                        </h2>
+
+                        <p class="hero-desc">
+                            Chương trình tích hợp chuyên sâu 2 buổi học: Làm chủ vòng lặp <code>for</code>, đóng gói hàm tái sử dụng (Function Factory, Refactoring tính thuế) ở Buổi 09; và chuyển mình sang thao tác cây DOM, xử lý sự kiện <code>input</code>, <code>click</code>, chuyển đổi Light Switch, To-Do List và Bộ sưu tập ảnh ở Buổi 10.
+                        </p>
+
+                        <div class="hero-actions">
+                            <button type="button" class="btn-primary" onclick="switchSessionView('b9')">
+                                <i class="fa-solid fa-repeat"></i> Xem Buổi 09 (Loop &amp; Hàm)
+                            </button>
+                            <button type="button" class="btn-primary" style="background: var(--grad-b10); box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);" onclick="switchSessionView('b10')">
+                                <i class="fa-solid fa-code-fork"></i> Xem Buổi 10 (DOM &amp; Event)
+                            </button>
+                            <button type="button" class="btn-secondary" onclick="switchSessionView('all')">
+                                <i class="fa-solid fa-layer-group"></i> Hiển thị tất cả
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hồ sơ sinh viên -->
+                    <aside class="hero-profile" aria-label="Thông tin sinh viên thực hiện">
+                        <div class="profile-card-top">
+                            <div class="avatar-wrapper">
+                                <img src="avatar.jpg" onerror="this.onerror=null; this.src='../avatar.jpg';"
+                                    alt="Ảnh chân dung Mạc Thùy Thiên Ân" width="64" height="64">
+                                <span class="avatar-status-dot" title="Đang trực tuyến"></span>
+                            </div>
+                            <div>
+                                <h3 class="profile-name">Mạc Thùy Thiên Ân</h3>
+                                <p class="profile-id">MSSV: 25AI111 · Lớp 25AI111</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-list">
+                            <div class="info-item">
+                                <span class="info-label"><i class="fa-solid fa-graduation-cap"></i> Cơ sở đào tạo:</span>
+                                <span class="info-val">Đại học Lạc Hồng (LHU)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label"><i class="fa-solid fa-laptop-code"></i> Học phần:</span>
+                                <span class="info-val">111101 · Thiết Kế Web</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label"><i class="fa-solid fa-calendar-check"></i> Quy mô:</span>
+                                <span class="info-val" style="color: #34d399;">Gộp Buổi 09 &amp; 10 (Hoàn tất 100%)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label"><i class="fa-solid fa-terminal"></i> Console F12:</span>
+                                <span class="info-val">Đã đồng bộ Live Stream</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             3. CHỌN CHẾ ĐỘ HIỂN THỊ (SESSION SWITCHER)
+             ========================================================================= -->
+        <div class="container">
+            <div class="session-nav-bar" role="tablist" aria-label="Bộ chọn chế độ hiển thị">
+                <button type="button" class="session-tab-btn active all" onclick="switchSessionView('all')">
+                    <i class="fa-solid fa-layer-group"></i> Tất Cả Nội Dung (Buổi 09 &amp; 10)
+                </button>
+                <button type="button" class="session-tab-btn b9" onclick="switchSessionView('b9')">
+                    <i class="fa-solid fa-repeat"></i> Chỉ Xem Buổi 09 (Vòng Lặp &amp; Hàm)
+                </button>
+                <button type="button" class="session-tab-btn b10" onclick="switchSessionView('b10')">
+                    <i class="fa-solid fa-cubes"></i> Chỉ Xem Buổi 10 (Thao Tác DOM &amp; Sự Kiện)
+                </button>
+            </div>
+        </div>
+
+        <!-- =========================================================================
+             4. DEVTOOLS CONSOLE TERMINAL SIMULATOR
+             ========================================================================= -->
+        <section class="section-terminal-demo" id="terminal">
+            <div class="container">
+                <div class="terminal-wrapper">
+
+                    <header class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="term-btn term-red" title="Đóng"></span>
+                            <span class="term-btn term-yellow" title="Thu nhỏ"></span>
+                            <span class="term-btn term-green" title="Phóng to"></span>
+                        </div>
+                        <div class="terminal-title">
+                            <i class="fa-solid fa-terminal"></i> Nexus DevTools Simulator · Đồng bộ trực tiếp F12 Console
+                        </div>
+                        <div class="terminal-actions">
+                            <button type="button" class="btn-term-action" onclick="Terminal.clear()">
+                                <i class="fa-solid fa-ban"></i> Clear
+                            </button>
+                        </div>
+                    </header>
+
+                    <div class="terminal-body" id="terminalOutput" role="log" aria-live="polite"></div>
+
+                    <div class="terminal-input-bar">
+                        <span class="input-prompt">&gt;</span>
+                        <input type="text" id="termCommandInput" class="terminal-input"
+                               placeholder="Gõ lệnh JS tại đây và nhấn Enter (ví dụ: tinhDienTich(8, 5) hoặc mayTinh(10, 2, '+'))..."
+                               autocomplete="off">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             5. PHẦN 1: NỘI DUNG BUỔI 09 (VÒNG LẶP & HÀM - TRANG 65)
+             ========================================================================= -->
+        <div id="sec-buoi09">
+
+            <!-- HOẠT ĐỘNG 1: THE COUNTING MACHINE -->
+            <section class="section-block" id="b9-hd1">
+                <div class="container">
+                    <header class="section-head">
+                        <span class="section-badge badge-b9"><i class="fa-solid fa-repeat"></i> Buổi 09 · Hoạt động 1 (30 phút)</span>
+                        <h2 class="section-title">"The Counting Machine" - Máy Đếm Tự Động</h2>
+                        <p class="section-subtitle">
+                            Sử dụng vòng lặp <code>for</code> để in ra dãy số từ 1 đến 100 trên Console. Sau đó tùy chỉnh để chỉ in ra các số chẵn (<code>i % 2 === 0</code>).
+                        </p>
+                    </header>
+
+                    <div class="grid-two-col">
+                        <div class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0.75rem;">
+                                    <i class="fa-solid fa-terminal" style="color: var(--color-primary);"></i> Điều Khiển Máy Đếm Trên Console
+                                </h3>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                                    Bấm các nút dưới đây để thực thi vòng lặp và quan sát kết quả được đẩy trực tiếp vào Terminal Simulator và Console F12:
+                                </p>
+                                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                                    <button type="button" class="btn-primary" onclick="runCountingMachine('all')">
+                                        <i class="fa-solid fa-arrow-down-1-9"></i> Đếm từ 1 &rarr; 100
+                                    </button>
+                                    <button type="button" class="btn-secondary" onclick="runCountingMachine('even')">
+                                        <i class="fa-solid fa-filter"></i> Chỉ In Các Số Chẵn
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="input-label" style="margin-bottom: 0.4rem; display: block;">Kết quả dãy số gần nhất:</label>
+                                <div class="output-box" id="countingOutput" style="max-height: 120px; overflow-y: auto;">
+                                    Bấm một trong hai nút phía trên để bắt đầu đếm...
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vibe Coding Explainer -->
+                        <div class="card-box" style="background: linear-gradient(145deg, rgba(30, 27, 75, 0.45), rgba(15, 23, 42, 0.85)); border-color: rgba(168, 85, 247, 0.35);">
+                            <div>
+                                <span class="section-badge" style="background: rgba(168, 85, 247, 0.2); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.4);">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i> Vibe Coding · Trợ lý AI Giải Thích
+                                </span>
+                                <h3 style="font-size: 1.15rem; font-weight: 800; margin-top: 0.5rem; margin-bottom: 0.75rem;">
+                                    3 Thành Phần Bên Trong Ngoặc Đơn của Vòng Lặp <code>for</code>:
+                                </h3>
+                                <div class="code-box" style="margin-bottom: 1rem;">
+                                    <span class="code-kw">for</span> (<span class="code-kw">let</span> <span class="code-var">i</span> = <span class="code-num">1</span>; <span class="code-var">i</span> &lt;= <span class="code-num">100</span>; <span class="code-var">i</span>++) {<br>
+                                    &nbsp;&nbsp;<span class="code-comment">// Khối lệnh thực thi</span><br>
+                                    }
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem;">
+                                    <div><strong>1. Khởi tạo (Initialization - <code>let i = 1</code>):</strong> Chạy duy nhất một lần khi vòng lặp bắt đầu để khai báo và khởi tạo biến đếm.</div>
+                                    <div><strong>2. Điều kiện (Condition - <code>i &lt;= 100</code>):</strong> Kiểm tra trước mỗi lần lặp. Nếu <code>true</code> thì thực thi khối lệnh; nếu <code>false</code> thì dừng vòng lặp ngay.</div>
+                                    <div><strong>3. Bước nhảy (Update - <code>i++</code>):</strong> Chạy sau mỗi lần lặp hoàn tất để tăng/giảm biến đếm trước khi kiểm tra lại điều kiện tiếp theo.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HOẠT ĐỘNG 2: FUNCTION FACTORY -->
+            <section class="section-block" id="b9-hd2">
+                <div class="container">
+                    <header class="section-head">
+                        <span class="section-badge badge-b9"><i class="fa-solid fa-gears"></i> Buổi 09 · Hoạt động 2 (45 phút)</span>
+                        <h2 class="section-title">"Function Factory" - Nhà Máy Xử Lý Dữ Liệu</h2>
+                        <p class="section-subtitle">
+                            Giáo trình Lạc Hồng Trang 65: Viết hàm <code>tinhDienTich(dai, rong)</code> gọi 3 lần với tham số khác nhau và xây dựng hàm trả về lời chào kết hợp tính tuổi dựa trên năm sinh.
+                        </p>
+                    </header>
+
+                    <div class="grid-two-col">
+                        <!-- Hàm tính diện tích -->
+                        <div class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                    1. Hàm tinhDienTich(dai, rong)
+                                </h3>
+                                <div class="code-box" style="margin-bottom: 1rem;">
+                                    <span class="code-kw">function</span> <span class="code-fn">tinhDienTich</span>(<span class="code-var">dai</span>, <span class="code-var">rong</span>) {<br>
+                                    &nbsp;&nbsp;<span class="code-kw">return</span> dai * rong;<br>
+                                    }<br>
+                                    <span class="code-comment">// Gọi hàm 3 lần với các thông số khác nhau</span><br>
+                                    tinhDienTich(<span class="code-num">5</span>, <span class="code-num">3</span>); &nbsp;&nbsp;&nbsp;<span class="code-comment">// 15</span><br>
+                                    tinhDienTich(<span class="code-num">12</span>, <span class="code-num">7</span>); &nbsp;&nbsp;<span class="code-comment">// 84</span><br>
+                                    tinhDienTich(<span class="code-num">20</span>, <span class="code-num">15</span>); &nbsp;<span class="code-comment">// 300</span>
+                                </div>
+                                <button type="button" class="btn-primary" onclick="runFunctionFactoryDemo()">
+                                    <i class="fa-solid fa-play"></i> Thực thi &amp; In 3 Lần ra Console
+                                </button>
+                            </div>
+                            <div class="output-box success" id="dtOutputBox">
+                                Lần 1 (5×3) = <strong>15</strong> | Lần 2 (12×7) = <strong>84</strong> | Lần 3 (20×15) = <strong>300</strong>
+                            </div>
+                        </div>
+
+                        <!-- Prompt mẫu Chào & Tính Tuổi -->
+                        <div class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                    2. Prompt Mẫu: Chào Hỏi &amp; Tính Tuổi
+                                </h3>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                                    Nhận tên và năm sinh, trả về chuỗi <code>'Chào [Tên], bạn hiện tại [Số tuổi] tuổi'</code>:
+                                </p>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <div>
+                                        <label for="ageNameInput" class="input-label" style="font-size:0.8rem;">Tên người dùng:</label>
+                                        <input type="text" id="ageNameInput" class="input-field" value="Mạc Thùy Thiên Ân">
+                                    </div>
+                                    <div>
+                                        <label for="ageYearInput" class="input-label" style="font-size:0.8rem;">Năm sinh:</label>
+                                        <input type="number" id="ageYearInput" class="input-field" value="2006">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-primary" onclick="runGreetingAgeDemo()">
+                                    <i class="fa-solid fa-comments"></i> Gọi Hàm &amp; In Lời Chào
+                                </button>
+                            </div>
+                            <div class="output-box success" id="greetingAgeOutput">
+                                Chào Mạc Thùy Thiên Ân, bạn hiện tại 20 tuổi.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HOẠT ĐỘNG 3: REFACTORING CHALLENGE -->
+            <section class="section-block" id="b9-hd3">
+                <div class="container">
+                    <header class="section-head">
+                        <span class="section-badge badge-b9"><i class="fa-solid fa-screwdriver-wrench"></i> Buổi 09 · Hoạt động 3 (30 phút)</span>
+                        <h2 class="section-title">"Refactoring Challenge" - Đóng Gói Hàm Tính Thuế</h2>
+                        <p class="section-subtitle">
+                            Đóng gói đoạn code tính thuế thu nhập cá nhân lặp lại thành một hàm <code>tinhThueThuNhap(luong)</code> có thể tái sử dụng cho nhiều mức lương khác nhau.
+                        </p>
+                    </header>
+
+                    <div class="grid-two-col">
+                        <div class="card-box">
+                            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                Đoạn Mã Đã Được Tối Ưu Hóa (Refactored Function)
+                            </h3>
+                            <div class="code-box">
+                                <span class="code-kw">function</span> <span class="code-fn">tinhThueThuNhap</span>(<span class="code-var">luong</span>) {<br>
+                                &nbsp;&nbsp;<span class="code-kw">if</span> (luong &lt;= <span class="code-num">11000000</span>) <span class="code-kw">return</span> <span class="code-num">0</span>;<br>
+                                &nbsp;&nbsp;<span class="code-kw">if</span> (luong &lt;= <span class="code-num">20000000</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">return</span> (luong - <span class="code-num">11000000</span>) * <span class="code-num">0.1</span>;<br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;<span class="code-kw">return</span> (<span class="code-num">900000</span>) + (luong - <span class="code-num">20000000</span>) * <span class="code-num">0.2</span>;<br>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                    Thử Nghiệm Hàm Tính Thuế Với Mức Lương Bất Kỳ
+                                </h3>
+                                <label for="taxSalaryInput" class="input-label" style="margin-bottom: 0.4rem; display: block;">Mức lương gộp (VNĐ):</label>
+                                <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <input type="number" id="taxSalaryInput" class="input-field" value="18000000" step="1000000">
+                                    <button type="button" class="btn-primary" onclick="runTaxRefactorDemo()">Tính thuế</button>
+                                </div>
+                            </div>
+                            <div class="output-box success" id="taxOutput">
+                                Thuế TNCN: <strong>700.000 ₫</strong> | Thực lĩnh: <strong>17.300.000 ₫</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6 BÀI TẬP VỀ NHÀ BUỔI 09 -->
+            <section class="section-block" id="b9-homework">
+                <div class="container">
+                    <header class="section-head">
+                        <span class="section-badge badge-b9"><i class="fa-solid fa-book-bookmark"></i> Buổi 09 · 6 Bài tập tự rèn luyện</span>
+                        <h2 class="section-title">Hệ Thống 6 Bài Tập Tự Rèn Luyện (Buổi 09)</h2>
+                        <p class="section-subtitle">
+                            Các bài tập rèn luyện về vòng lặp <code>for</code>, hàm nhận tham số và cấu trúc điều kiện theo giáo trình Lạc Hồng.
+                        </p>
+                    </header>
+
+                    <div class="grid-cards">
+                        <!-- Bài 1: Bảng cửu chương 7 -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 1: Bảng Cửu Chương 7</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Sử dụng vòng lặp for để in bảng cửu chương 7 trên Console (7 x 1 = 7 ... 7 x 10 = 70).
+                                </p>
+                                <button type="button" class="btn-primary" onclick="inBangCuuChuong7()" style="margin-bottom: 1rem;">
+                                    <i class="fa-solid fa-play"></i> In Bảng Cửu Chương 7
+                                </button>
+                            </div>
+                            <div class="output-box" id="b9Hw1Output" style="max-height: 120px; overflow-y: auto;">
+                                Bấm nút để in bảng cửu chương 7...
+                            </div>
+                        </article>
+
+                        <!-- Bài 2: Tính tổng dãy số -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 2: Tính Tổng Dãy Số 1..n</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Hàm nhận vào số n, dùng vòng lặp tính tổng các số từ 1 đến n và trả về kết quả.
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                                    <input type="number" id="b9Hw2Input" class="input-field" value="10" min="1">
+                                    <button type="button" class="btn-primary" onclick="runB9Hw2()">Tính</button>
+                                </div>
+                            </div>
+                            <div class="output-box success" id="b9Hw2Output">
+                                Tổng từ 1 đến 10 là: <strong>55</strong>
+                            </div>
+                        </article>
+
+                        <!-- Bài 3: Kiểm tra số nguyên tố -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 3: Kiểm Tra Số Nguyên Tố</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Kiểm tra xem số đó có chia hết cho số nào khác ngoài 1 và chính nó không (toán tử %).
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                                    <input type="number" id="b9Hw3Input" class="input-field" value="17" min="1">
+                                    <button type="button" class="btn-primary" onclick="runB9Hw3()">Kiểm tra</button>
+                                </div>
+                            </div>
+                            <div class="output-box success" id="b9Hw3Output">
+                                <strong>17 là SỐ NGUYÊN TỐ.</strong>
+                            </div>
+                        </article>
+
+                        <!-- Bài 4: Máy tính cá nhân -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 4: Máy Tính Cá Nhân (4 Phép)</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Hàm nhận 3 tham số: so1, so2 và phepTinh (+, -, *, /).
+                                </p>
+                                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.5rem; margin-bottom: 1rem; align-items: center;">
+                                    <input type="number" id="b9Hw4Num1" class="input-field" value="10">
+                                    <select id="b9Hw4Op" class="input-field" style="width: auto;">
+                                        <option value="+">+</option>
+                                        <option value="-">-</option>
+                                        <option value="*">*</option>
+                                        <option value="/">/</option>
+                                    </select>
+                                    <input type="number" id="b9Hw4Num2" class="input-field" value="2">
+                                </div>
+                                <button type="button" class="btn-primary" onclick="runB9Hw4()" style="width: 100%; justify-content: center;">
+                                    Tính kết quả
+                                </button>
+                            </div>
+                            <div class="output-box success" id="b9Hw4Output" style="margin-top: 1rem;">
+                                Kết quả: <strong>12</strong>
+                            </div>
+                        </article>
+
+                        <!-- Bài 5: Tìm số lớn nhất trong 3 số -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 5: Tìm Max Trong 3 Số</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Hàm timMax(a, b, c) sử dụng các câu lệnh if bên trong để trả về số lớn nhất.
+                                </p>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem;">
+                                    <input type="number" id="b9Hw5A" class="input-field" value="15" title="Số a">
+                                    <input type="number" id="b9Hw5B" class="input-field" value="28" title="Số b">
+                                    <input type="number" id="b9Hw5C" class="input-field" value="9" title="Số c">
+                                </div>
+                                <button type="button" class="btn-primary" onclick="runB9Hw5()" style="width: 100%; justify-content: center;">
+                                    Tìm số lớn nhất
+                                </button>
+                            </div>
+                            <div class="output-box success" id="b9Hw5Output" style="margin-top: 1rem;">
+                                Số lớn nhất trong 3 số là: <strong>28</strong>
+                            </div>
+                        </article>
+
+                        <!-- Bài 6: Vòng lặp chào hỏi -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 6: Vòng Lặp "Chào Hỏi"</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Tạo mảng 5 thành viên nhóm và dùng vòng lặp in câu chào từng người trên Console.
+                                </p>
+                                <button type="button" class="btn-primary" onclick="runB9Hw6()" style="margin-bottom: 1rem;">
+                                    <i class="fa-solid fa-users"></i> Chạy Vòng Lặp Chào Hỏi
+                                </button>
+                            </div>
+                            <div class="output-box" id="b9Hw6Output" style="max-height: 120px; overflow-y: auto;">
+                                Bấm nút để in câu chào 5 thành viên...
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- =========================================================================
+             6. PHẦN 2: NỘI DUNG BUỔI 10 (THAO TÁC DOM & SỰ KIỆN - TRANG 68)
+             ========================================================================= -->
+        <div id="sec-buoi10">
+
+            <!-- HOẠT ĐỘNG 1: THE ELEMENT PICKER -->
+            <section class="section-block" id="b10-hd1">
+                <div class="container">
+                    <header class="section-head">
+                        <span class="section-badge badge-b10"><i class="fa-solid fa-magnifying-glass"></i> Buổi 10 · Hoạt động 1 (30 phút)</span>
+                        <h2 class="section-title">"The Element Picker" - Truy Tìm Thẻ Trên Cây DOM</h2>
+                        <p class="section-subtitle">
+                            Giáo trình Lạc Hồng Trang 68: Sử dụng <code>document.querySelector()</code> và <code>document.querySelectorAll()</code> để tìm phần tử và áp dụng style động.
+                        </p>
+                    </header>
+
+                    <div class="grid-two-col">
+                        <div class="card-box">
+                            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                Minh Họa Truy Tìm Thẻ
+                            </h3>
+                            <div class="code-box" style="margin-bottom: 1rem;">
+                                <span class="code-comment">// Truy tìm một phần tử duy nhất</span><br>
+                                <span class="code-kw">const</span> <span class="code-var">brand</span> = <span class="code-var">document</span>.querySelector(<span class="code-str">'.brand-link'</span>);<br>
+                                <span class="code-var">console</span>.log(brand);<br><br>
+                                <span class="code-comment">// Vibe Coding: Đổi màu đỏ cho mọi thẻ con trong #menu</span><br>
+                                <span class="code-kw">const</span> <span class="code-var">links</span> = <span class="code-var">document</span>.querySelectorAll(<span class="code-str">'#menu a'</span>);<br>
+                                links.forEach(a =&gt; a.style.color = <span class="code-str">'red'</span>);
+                            </div>
+                            <button type="button" class="btn-primary" style="background: var(--grad-b10);" onclick="runElementPickerDemo()">
+                                <i class="fa-solid fa-play"></i> Chạy QuerySelector &amp; Đổi Màu Thẻ
+                            </button>
+                        </div>
+
+                        <!-- Vibe Coding Demo Box -->
+                        <div class="card-box" id="vibeMenuDemo">
+                            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                Khu Vực Menu Thử Nghiệm (<span style="font-family: var(--font-mono);">#vibeMenuDemo</span>)
+                            </h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                                Khi bấm nút "Chạy QuerySelector", các liên kết dưới đây sẽ tự động chuyển sang màu đỏ:
+                            </p>
+                            <div style="display: flex; gap: 1rem; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                                <a href="javascript:void(0)" style="color: var(--color-primary); text-decoration: none;">Trang Chủ</a>
+                                <a href="javascript:void(0)" style="color: var(--color-primary); text-decoration: none;">Dự Án AI</a>
+                                <a href="javascript:void(0)" style="color: var(--color-primary); text-decoration: none;">Liên Hệ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HOẠT ĐỘNG 2: LIGHT SWITCH -->
+            <section class="section-block" id="b10-hd2">
+                <div class="container">
+                    <header class="section-head">
+                        <span class="section-badge badge-b10"><i class="fa-solid fa-lightbulb"></i> Buổi 10 · Hoạt động 2 (45 phút)</span>
+                        <h2 class="section-title">"Light Switch" - Bật / Tắt Bóng Đèn &amp; Đổi Dark Mode</h2>
+                        <p class="section-subtitle">
+                            Thay đổi thuộc tính hình ảnh (đèn sáng / đèn tắt) và toggle màu nền body từ sáng sang tối theo Prompt mẫu.
+                        </p>
+                    </header>
+
+                    <div class="grid-two-col">
+                        <!-- Bật tắt bóng đèn -->
+                        <div class="card-box">
+                            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center;">
+                                Thử Nghiệm Bật / Tắt Bóng Đèn
+                            </h3>
+                            <div class="lamp-demo-container">
+                                <i id="lampIcon" class="fa-regular fa-lightbulb lamp-graphic"></i>
+                                <span class="lamp-status-text" id="lampStatus">ĐÈN ĐANG TẮT (OFF)</span>
+                                <button type="button" id="lightSwitchBtn" class="btn-primary" style="background: var(--grad-b10);" onclick="toggleLightSwitch()">
+                                    <i class="fa-solid fa-lightbulb"></i> Bật Đèn
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Prompt mẫu: Đổi nền Body Dark / Light Mode -->
+                        <div class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                    Prompt Mẫu: Nút Đổi Màu Nền Body (Dark Mode)
+                                </h3>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                                    "Viết mã JS để khi tôi click vào một nút có id là 'toggle-btn', nó sẽ thay đổi màu nền của body từ trắng sang đen và ngược lại":
+                                </p>
+                                <div class="code-box" style="margin-bottom: 1.25rem;">
+                                    <span class="code-kw">const</span> <span class="code-var">btn</span> = <span class="code-var">document</span>.getElementById(<span class="code-str">'toggle-btn'</span>);<br>
+                                    btn.addEventListener(<span class="code-str">'click'</span>, () =&gt; {<br>
+                                    &nbsp;&nbsp;<span class="code-var">document</span>.body.classList.toggle(<span class="code-str">'light-theme'</span>);<br>
+                                    });
+                                </div>
+                                <button type="button" class="btn-secondary" onclick="toggleDarkMode()">
+                                    <i class="fa-solid fa-circle-half-stroke"></i> Thử Bấm Đổi Theme Ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HOẠT ĐỘNG 3: LIVE INPUT -->
+            <section class="section-block" id="b10-hd3">
+                <div class="container">
+                    <header class="section-head">
+                        <span class="section-badge badge-b10"><i class="fa-solid fa-keyboard"></i> Buổi 10 · Hoạt động 3 (30 phút)</span>
+                        <h2 class="section-title">"Live Input" - Phản Hồi Tức Thì Với Sự Kiện 'input'</h2>
+                        <p class="section-subtitle">
+                            Khi người dùng gõ chữ vào ô input, nội dung ngay lập tức xuất hiện ở thẻ <code>&lt;span&gt;</code> bên cạnh và thẻ <code>&lt;h2&gt;</code> bên dưới.
+                        </p>
+                    </header>
+
+                    <div class="card-box">
+                        <div style="max-width: 600px;">
+                            <label for="liveTextInput" class="input-label" style="margin-bottom: 0.5rem; display: block;">
+                                Nhập nội dung bất kỳ: <span id="liveSpanTarget" style="color: var(--color-emerald); font-weight: bold;"></span>
+                            </label>
+                            <input type="text" id="liveTextInput" class="input-field" placeholder="Gõ thử vào đây để thấy phép màu DOM..." autocomplete="off">
+                        </div>
+
+                        <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(0,0,0,0.3); border-radius: var(--radius-md); border: 1px dashed var(--border-emerald);">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Thẻ &lt;h2&gt; mục tiêu hiển thị tức thì:</span>
+                            <h2 id="liveH2Target" style="font-size: 1.6rem; color: var(--color-primary); margin-top: 0.5rem; word-break: break-word;">
+                                Nội dung sẽ xuất hiện tức thì tại đây...
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6 BÀI TẬP VỀ NHÀ BUỔI 10 -->
+            <section class="section-block" id="b10-homework">
+                <div class="container">
+                    <header class="section-head">
+                        <span class="section-badge badge-b10"><i class="fa-solid fa-sliders"></i> Buổi 10 · 6 Bài tập tự rèn luyện</span>
+                        <h2 class="section-title">Hệ Thống 6 Bài Tập Tự Rèn Luyện (Buổi 10)</h2>
+                        <p class="section-subtitle">
+                            Các bài tập thực hành tương tác trực tiếp với DOM: thay đổi lời chào, bộ sưu tập ảnh, To-Do list, kiểm tra mật khẩu, phóng to chữ và ẩn/hiện mật khẩu.
+                        </p>
+                    </header>
+
+                    <div class="grid-cards">
+                        <!-- Bài 1: Thay đổi lời chào theo tên -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 1: Lời Chào Trên DOM</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Tạo ô input và nút bấm. Khi nhấn, hiển thị "Chào mừng [Tên]!" lên web thay vì alert.
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                                    <input type="text" id="b10Hw1Input" class="input-field" value="Mạc Thùy Thiên Ân">
+                                    <button type="button" class="btn-primary" style="background: var(--grad-b10);" onclick="runB10Hw1()">Gửi</button>
+                                </div>
+                            </div>
+                            <div class="output-box success" id="b10Hw1Output">
+                                🎉 <strong>Chào mừng Mạc Thùy Thiên Ân!</strong>
+                            </div>
+                        </article>
+
+                        <!-- Bài 2: Simple Gallery -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 2: Bộ Sưu Tập Ảnh (Gallery)</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    1 ảnh lớn và 3 thumbnail bên dưới. Click ảnh nhỏ nào, ảnh lớn đổi sang ảnh đó.
+                                </p>
+                                <div class="gallery-wrapper">
+                                    <div class="gallery-main-img-box">
+                                        <img id="mainGalleryImg" src="avatar.jpg" alt="Ảnh phóng to" class="gallery-main-img">
+                                    </div>
+                                    <div class="gallery-thumbs">
+                                        <div class="gallery-thumb active" onclick="selectGalleryImage('avatar.jpg', this)">
+                                            <img src="avatar.jpg" alt="Thumb 1">
+                                        </div>
+                                        <div class="gallery-thumb" onclick="selectGalleryImage('../BaiTap_Buoi06/images/buoi08.svg', this)">
+                                            <img src="../BaiTap_Buoi06/images/buoi08.svg" alt="Thumb 2">
+                                        </div>
+                                        <div class="gallery-thumb" onclick="selectGalleryImage('../BaiTap_Buoi06/images/buoi09_10.svg', this)">
+                                            <img src="../BaiTap_Buoi06/images/buoi09_10.svg" alt="Thumb 3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Bài 3: To-Do List cơ bản -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 3: Danh Sách Việc (To-Do)</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Nhập công việc và nhấn "Thêm", công việc mới xuất hiện dưới dạng thẻ &lt;li&gt;.
+                                </p>
+                                <div class="todo-container">
+                                    <div style="display: flex; gap: 0.5rem;">
+                                        <input type="text" id="todoInput" class="input-field" placeholder="Nhập việc cần làm...">
+                                        <button type="button" class="btn-primary" style="background: var(--grad-b10);" onclick="addTodoItem()">Thêm</button>
+                                    </div>
+                                    <ul class="todo-list" id="todoList">
+                                        <li class="todo-item">
+                                            <span onclick="this.parentElement.classList.toggle('done')">Ôn tập vòng lặp for Buổi 09</span>
+                                            <button type="button" class="btn-remove-todo" onclick="this.parentElement.remove()" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                                        </li>
+                                        <li class="todo-item">
+                                            <span onclick="this.parentElement.classList.toggle('done')">Thực hành thao tác DOM Buổi 10</span>
+                                            <button type="button" class="btn-remove-todo" onclick="this.parentElement.remove()" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Bài 4: Kiểm tra độ dài mật khẩu -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 4: Kiểm Tra Độ Dài Mật Khẩu</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Độ dài &lt; 8 ký tự hiện thông báo đỏ, &gt;= 8 ký tự hiện thông báo xanh.
+                                </p>
+                                <div style="margin-bottom: 1rem;">
+                                    <input type="password" id="b10PassLengthInput" class="input-field" placeholder="Gõ thử mật khẩu vào đây...">
+                                </div>
+                            </div>
+                            <div class="output-box" id="b10PassLengthMsg">
+                                Vui lòng nhập mật khẩu để kiểm tra...
+                            </div>
+                        </article>
+
+                        <!-- Bài 5: Thay đổi kích thước văn bản -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 5: Thay Đổi Kích Thước Chữ</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Tạo 2 nút "Phóng to" và "Thu nhỏ" tăng hoặc giảm font-size 2px.
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                                    <button type="button" class="btn-primary" style="background: var(--grad-b10);" onclick="resizeText(2)">
+                                        <i class="fa-solid fa-magnifying-glass-plus"></i> Phóng to (+2px)
+                                    </button>
+                                    <button type="button" class="btn-secondary" onclick="resizeText(-2)">
+                                        <i class="fa-solid fa-magnifying-glass-minus"></i> Thu nhỏ (-2px)
+                                    </button>
+                                </div>
+                                <div class="resizer-target-box" id="resizerTarget">
+                                    Văn bản mẫu điều chỉnh kích thước (<span id="currentSizeSpan">16px</span>)
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Bài 6: Ẩn/Hiện mật khẩu -->
+                        <article class="card-box">
+                            <div>
+                                <h3 style="font-size: 1.15rem; font-weight: 800;">Bài 6: Ẩn / Hiện Mật Khẩu</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0 1rem;">
+                                    Chuyển đổi type="password" thành type="text" và ngược lại khi bấm nút.
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                                    <input type="password" id="b10TogglePassInput" class="input-field" value="MatKhau@2026">
+                                    <button type="button" id="b10TogglePassBtn" class="btn-primary" style="background: var(--grad-b10); min-width: 90px;" onclick="togglePasswordVisibility()">
+                                        <i class="fa-solid fa-eye"></i> Hiện
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="output-box success">
+                                Bấm nút "Hiện" để toggle xem mật khẩu dạng văn bản thuần.
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- =========================================================================
+         FOOTER CHUẨN NEXUS HUB & W3C
+         ========================================================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+
+                <div class="footer-brand">
+                    <h4>Nexus · Học Phần Thiết Kế Web 111101</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 0.85rem;">
+                        Chuyên ngành Trí tuệ Nhân tạo &amp; Phát triển Web Frontend · Đại học Lạc Hồng (LHU).
+                    </p>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">
+                        Sinh viên thực hiện: <strong>Mạc Thùy Thiên Ân</strong> (MSSV: 25AI111).
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Mục Lục Tuần 01 &rarr; Tuần 06</h5>
+                    <ul class="footer-links">
+                        <li><a href="../BaiTap_Buoi01/index.html">Tuần 01: Nhập Môn HTML5</a></li>
+                        <li><a href="../BaiTap_Buoi02/MacThuyThienAn_25AI111.html">Tuần 02: HTML5 Semantic</a></li>
+                        <li><a href="../BaiTap_Buoi03/MacThuyThienAn_25AI111.html">Tuần 03: CSS Box Model</a></li>
+                        <li><a href="../BaiTap_Buoi04/MacThuyThienAn_25AI111.html">Tuần 04: Flexbox &amp; Grid</a></li>
+                        <li><a href="../BaiTap_Buoi05/index.html">Tuần 05: CSS Animation &amp; AOS</a></li>
+                        <li><a href="../BaiTap_Buoi06/index.html">Tuần 06: Capstone Index Hub</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Tuần 08 &rarr; Tuần 10</h5>
+                    <ul class="footer-links">
+                        <li><a href="../BaiTap_Buoi08/index.html">Tuần 08: JS Console &amp; Logic</a></li>
+                        <li><a href="index.html" style="color: var(--color-primary); font-weight: bold;">Tuần 09 &amp; 10: Vòng Lặp, Hàm &amp; DOM</a></li>
+                        <li><a href="../index.html">Quay về Nexus Hub Chính</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 Mạc Thùy Thiên Ân (25AI111) · Trường Đại học Lạc Hồng (LHU).
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <span style="color: #34d399;"><i class="fa-solid fa-circle-check"></i> W3C HTML5 Validated</span>
+                    <a href="#hero" style="color: var(--text-muted); text-decoration: none;">
+                        <i class="fa-solid fa-arrow-up"></i> Đầu trang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript chính của Buổi 09 & 10 -->
+    <script src="script.js"></script>
+</body>
+
+</html>

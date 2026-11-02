@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <linearGradient id="g910" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="t910" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#g910)"/>
+
+  <!-- Visual Card Mockups -->
+  <rect x="140" y="80" width="240" height="190" rx="14" fill="#030712" stroke="#38bdf8" stroke-width="2" opacity="0.95"/>
+  <rect x="140" y="80" width="240" height="30" rx="14" fill="#1e293b"/>
+  <circle cx="160" cy="95" r="4.5" fill="#ef4444"/>
+  <circle cx="174" cy="95" r="4.5" fill="#f59e0b"/>
+  <circle cx="188" cy="95" r="4.5" fill="#10b981"/>
+  <text x="260" y="100" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">Buổi 09: Loop &amp; Func</text>
+  <text x="155" y="135" fill="#facc15" font-family="'JetBrains Mono', monospace" font-size="12">for (let i = 1; i &lt;= 100; i++)</text>
+  <text x="155" y="160" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12">function tinhDienTich()</text>
+  <text x="155" y="185" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="12">tinhTong(n) &amp; soNguyenTo</text>
+  <text x="155" y="210" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="12">timMax(a, b, c)</text>
+  <text x="155" y="235" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11">// 6 Bài tập tự rèn luyện</text>
+
+  <rect x="420" y="80" width="240" height="190" rx="14" fill="#030712" stroke="#34d399" stroke-width="2" opacity="0.95"/>
+  <rect x="420" y="80" width="240" height="30" rx="14" fill="#1e293b"/>
+  <circle cx="440" cy="95" r="4.5" fill="#ef4444"/>
+  <circle cx="454" cy="95" r="4.5" fill="#f59e0b"/>
+  <circle cx="468" cy="95" r="4.5" fill="#10b981"/>
+  <text x="540" y="100" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">Buổi 10: DOM &amp; Events</text>
+  <text x="435" y="135" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="12">document.querySelector()</text>
+  <text x="435" y="160" fill="#facc15" font-family="'JetBrains Mono', monospace" font-size="12">lightSwitch.src = "on.png"</text>
+  <text x="435" y="185" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12">input.addEventListener()</text>
+  <text x="435" y="210" fill="#fb7185" font-family="'JetBrains Mono', monospace" font-size="12">ToDo List &amp; Gallery</text>
+  <text x="435" y="235" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11">// 6 Bài tập DOM tương tác</text>
+
+  <!-- Titles -->
+  <text x="400" y="325" fill="url(#t910)" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">LOOPS · FUNCTIONS · DOM TREE · EVENT LISTENERS</text>
+  <text x="400" y="370" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" text-anchor="middle">BUỔI 09 &amp; 10: VÒNG LẶP, HÀM &amp; THAO TÁC DOM</text>
+  <text x="400" y="410" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-size="15" text-anchor="middle">Mạc Thùy Thiên Ân · MSSV: 25AI111 · Đại học Lạc Hồng</text>
+</svg>
