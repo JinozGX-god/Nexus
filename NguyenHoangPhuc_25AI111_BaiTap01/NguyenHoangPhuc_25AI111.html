@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio cá nhân thông minh - Nguyễn Hoàng Phúc (MSSV: 25AI111) - Khoa CNTT, Đại học Lạc Hồng. Tích hợp Dynamic Projects, Theme Switcher & Typewriter.">
+    <meta name="author" content="Nguyễn Hoàng Phúc - MSSV: 25AI111">
+    <title>Nguyễn Hoàng Phúc | AI Developer & Smart Portfolio</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- AOS (Animate On Scroll) CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9kcIE9UI746l8TqvPPoW6i61zUfN+A61Fq3cIbbV8l5lH90w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- File Style CSS Hệ Thống -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================================
+         BÀI 1: HEADER & BÀI 3: RESPONSIVE HAMBURGER MENU
+         - Thẻ ngữ nghĩa <header>, <nav>
+         - Nút chuyển Dark/Light Mode & Theme Color Switcher (Bài 4)
+         ========================================================================= -->
+    <header class="site-header" data-aos="fade-down" data-aos-duration="600">
+        <div class="container">
+            <div class="header-inner">
+                
+                <!-- Logo & Thương hiệu cá nhân -->
+                <a href="#home" class="brand-link" aria-label="Trang chủ Portfolio">
+                    <span class="brand-icon"><i class="fa-solid fa-code"></i></span>
+                    <div class="brand-text">
+                        <h1>Hoàng Phúc</h1>
+                        <span class="brand-tag">LHU · 25AI111</span>
+                    </div>
+                </a>
+
+                <!-- Thanh điều hướng chính -->
+                <nav class="nav-menu" id="nav-menu" aria-label="Điều hướng trang web">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                        <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> Giới thiệu</a></li>
+                        <li><a href="#skills" class="nav-link"><i class="fa-solid fa-layer-group"></i> Kỹ năng</a></li>
+                        <li><a href="#projects" class="nav-link"><i class="fa-solid fa-briefcase"></i> Dự án</a></li>
+                        <li><a href="../index.html" class="nav-link"><i class="fa-solid fa-cubes"></i> Hub Môn Học</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Các công cụ tương tác thời gian thực (Bài 4: Theme & Color) -->
+                <div class="header-actions">
+                    <!-- Color Switcher Buttons -->
+                    <button class="palette-btn" style="background:#38bdf8" onclick="changePrimaryColor('#38bdf8')" title="Màu Xanh Cyan"></button>
+                    <button class="palette-btn" style="background:#10b981" onclick="changePrimaryColor('#10b981')" title="Màu Ngọc Lục Bảo"></button>
+                    <button class="palette-btn" style="background:#c084fc" onclick="changePrimaryColor('#c084fc')" title="Màu Tím Ánh Sao"></button>
+                    <button class="palette-btn" style="background:#f43f5e" onclick="changePrimaryColor('#f43f5e')" title="Màu Đỏ Hoa Hồng"></button>
+
+                    <!-- Nút Dark/Light Theme Switcher -->
+                    <button class="theme-btn" id="theme-toggle-btn" aria-label="Đổi chế độ sáng tối" title="Chuyển Dark/Light Mode">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+
+                    <!-- Hamburger Button cho Mobile -->
+                    <button class="hamburger-btn" id="hamburger-btn" aria-label="Bật tắt menu mobile">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         NỘI DUNG CHÍNH (MAIN) - BẢN SẮC CÁ NHÂN SEMANTIC HTML5
+         ========================================================================= -->
+    <main id="home">
+
+        <!-- =====================================================================
+             BÀI 1: HERO SECTION & BÀI 6: TYPEWRITER EFFECT
+             ===================================================================== -->
+        <section class="hero-section" data-aos="fade-up" data-aos-duration="700">
+            <div class="container">
+                <div class="hero-wrapper">
+                    
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <span class="pulse-dot"></span>
+                            <span>Học Phần 111101 · Thiết Kế Web</span>
+                        </div>
+                        <h2 class="hero-title">
+                            Xin chào, tôi là <br>
+                            <span class="text-gradient">Nguyễn Hoàng Phúc</span>
+                        </h2>
+                        <!-- Bài 6: Typewriter effect container -->
+                        <p class="hero-subtitle">
+                            Tôi là <span id="typewriter-text" style="font-weight:700;color:var(--color-primary)">Sinh Viên AI & Kỹ Sư Phần Mềm</span><span class="typewriter-cursor">|</span>. 
+                            Đam mê xây dựng các hệ sinh thái web hiện đại, thuật toán máy học và tối ưu trải nghiệm người dùng theo tiêu chuẩn quốc tế.
+                        </p>
+                        <div class="hero-btns">
+                            <a href="#projects" class="btn-cta">
+                                <i class="fa-solid fa-diagram-project"></i>
+                                <span>Khám phá dự án</span>
+                            </a>
+                            <a href="#about" class="btn-outline">
+                                <i class="fa-solid fa-id-badge"></i>
+                                <span>Về bản thân</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Thẻ thông tin cá nhân Hero Card -->
+                    <aside class="hero-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="avatar-frame">
+                            <img src="avatar.jpg" alt="Chân dung Nguyễn Hoàng Phúc" width="140" height="140">
+                            <div class="status-badge">
+                                <i class="fa-solid fa-circle" style="font-size:0.5rem"></i> Sẵn sàng hợp tác
+                            </div>
+                        </div>
+                        <h3 class="hero-card-name">Nguyễn Hoàng Phúc</h3>
+                        <p class="hero-card-role">MSSV: 25AI111 · Lớp 25AI111</p>
+                        
+                        <div class="hero-meta-grid">
+                            <div class="meta-item">
+                                <span class="meta-title"><i class="fa-solid fa-university"></i> Cơ sở:</span>
+                                <p class="meta-val">ĐH Lạc Hồng (LHU)</p>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-title"><i class="fa-solid fa-microchip"></i> Chuyên ngành:</span>
+                                <p class="meta-val">Trí tuệ Nhân tạo</p>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-title"><i class="fa-solid fa-envelope"></i> Email:</span>
+                                <p class="meta-val">kxkxk125@gmail.com</p>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-title"><i class="fa-brands fa-github"></i> GitHub:</span>
+                                <p class="meta-val">@JinozGX-god</p>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             BÀI 1: ABOUT ME SECTION (GIỚI THIỆU BẢN SẮC)
+             ===================================================================== -->
+        <section class="section-pad" id="about">
+            <div class="container">
+                <header class="section-head" data-aos="fade-up">
+                    <span class="section-tag">Bản sắc cá nhân</span>
+                    <h2 class="section-title">Về Bản Thân & Định Hướng</h2>
+                    <p class="section-desc">
+                        Kết hợp tư duy phân tích toán học từ chuyên ngành Trí tuệ Nhân tạo với sự tinh tế của lập trình giao diện hiện đại.
+                    </p>
+                </header>
+
+                <div class="about-grid">
+                    <article class="about-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="about-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Định Hướng AI & Machine Learning</h3>
+                        <p>Nghiên cứu thị giác máy tính (Computer Vision), mô hình ngôn ngữ lớn (LLM) và ứng dụng các thuật toán học máy vào giải quyết bài toán thực tiễn.</p>
+                    </article>
+
+                    <article class="about-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="about-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Web Frontend Architecture</h3>
+                        <p>Thiết kế giao diện chuẩn W3C Validator, tối ưu Responsive trên mọi độ phân giải màn hình từ 375px trở lên và áp dụng CSS Variables linh hoạt.</p>
+                    </article>
+
+                    <article class="about-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="about-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Tối Ưu & Tự Động Hóa</h3>
+                        <p>Ứng dụng Vibe Coding và AI để tối ưu chu trình phát triển sản phẩm, tự động hóa dữ liệu động qua API và Google Sheets không cần backend phức tạp.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             BÀI 2: HỆ THỐNG KỸ NĂNG (FLEXBOX & CSS GRID)
+             ===================================================================== -->
+        <section class="section-pad" id="skills" style="background: rgba(15, 23, 42, 0.4)">
+            <div class="container">
+                <header class="section-head" data-aos="fade-up">
+                    <span class="section-tag">Năng lực cốt lõi</span>
+                    <h2 class="section-title">Kỹ Năng & Công Nghệ</h2>
+                    <p class="section-desc">Hệ thống công nghệ được rèn luyện thực tế qua các bài thực hành và dự án chuyên sâu.</p>
+                </header>
+
+                <div class="skills-grid">
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-header">
+                            <span class="skill-name"><i class="fa-brands fa-html5" style="color:#e34f26"></i> HTML5 Semantic</span>
+                            <span class="skill-percent">95%</span>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-header">
+                            <span class="skill-name"><i class="fa-brands fa-css3-alt" style="color:#1572b6"></i> CSS3 Grid & Flexbox</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-header">
+                            <span class="skill-name"><i class="fa-brands fa-js" style="color:#f7df1e"></i> JavaScript (ES6+)</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="skill-header">
+                            <span class="skill-name"><i class="fa-brands fa-python" style="color:#3776ab"></i> Python & AI Models</span>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-fill" style="width: 88%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-header">
+                            <span class="skill-name"><i class="fa-solid fa-mobile-screen" style="color:#10b981"></i> Responsive 375px+</span>
+                            <span class="skill-percent">92%</span>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-fill" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="skill-header">
+                            <span class="skill-name"><i class="fa-brands fa-git-alt" style="color:#f05032"></i> Git & GitHub Workflow</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             BÀI 5: QUẢN LÝ DỰ ÁN QUA GOOGLE SHEETS & BÀI 6: LỌC DANH MỤC DỰ ÁN
+             ===================================================================== -->
+        <section class="section-pad" id="projects">
+            <div class="container">
+                <header class="section-head" data-aos="fade-up">
+                    <span class="section-tag">Sản phẩm thực tế</span>
+                    <h2 class="section-title">Danh Mục Dự Án Nổi Bật</h2>
+                    <p class="section-desc">Dữ liệu được nạp động từ cấu trúc Google Sheets JSON API, hỗ trợ phân loại tức thì.</p>
+                </header>
+
+                <!-- Bài 6: Bộ lọc danh mục dự án (Web, AI, Mobile) -->
+                <div class="filter-tabs" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> Tất cả dự án</button>
+                    <button class="filter-btn" data-filter="ai"><i class="fa-solid fa-brain"></i> Trí tuệ Nhân tạo (AI)</button>
+                    <button class="filter-btn" data-filter="web"><i class="fa-solid fa-globe"></i> Web Development</button>
+                    <button class="filter-btn" data-filter="mobile"><i class="fa-solid fa-mobile"></i> Mobile / IoT</button>
+                </div>
+
+                <!-- Bài 5: Thông báo nguồn nạp dữ liệu động -->
+                <div class="data-source-status" id="data-source-status">
+                    <i class="fa-solid fa-cloud-arrow-down"></i> Đang chuẩn bị nạp dữ liệu từ Google Sheets API...
+                </div>
+
+                <!-- Lưới hiển thị các Card dự án sinh tự động bằng JavaScript (CSS Grid Bài 2) -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- JavaScript tự động render danh sách dự án vào đây -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================================
+         BÀI 1 & BÀI 2: STICKY FOOTER HOÀN CHỈNH
+         ========================================================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2>Nguyễn Hoàng Phúc</h2>
+                    <p class="footer-desc">
+                        Sinh viên ngành Trí tuệ Nhân tạo - Khóa 2025. Dự án xây dựng Portfolio cá nhân thông minh thuộc Học phần Thiết Kế Web 111101, Đại học Lạc Hồng.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Liên Kết Nhanh</h3>
+                    <div class="footer-links">
+                        <a href="#home">Trang chủ</a>
+                        <a href="#about">Về bản thân</a>
+                        <a href="#skills">Kỹ năng</a>
+                        <a href="#projects">Dự án</a>
+                        <a href="../BaiTap_Buoi08_09_10/index.html">Bài tập JS (Tuần 8-10)</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Thông Tin Liên Hệ</h3>
+                    <div class="footer-links">
+                        <span><i class="fa-solid fa-envelope"></i> kxkxk125@gmail.com</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Đại học Lạc Hồng, Đồng Nai</span>
+                        <a href="https://github.com/JinozGX-god" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> github.com/JinozGX-god</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <time datetime="2026">2026</time> <strong>Nguyễn Hoàng Phúc</strong> (MSSV: 25AI111). Khoa CNTT · Đại học Lạc Hồng.</p>
+                <span>Semantic HTML5 · CSS Variables · Dynamic JS · Google Sheets Schema</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Thư viện AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- File JavaScript Xử Lý Cả 6 Bài -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
