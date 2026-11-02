@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bài tập Buổi 08: Nhập môn JavaScript, DevTools Console, Logic Builder & 6 Bài tập tự rèn luyện - Mạc Thùy Thiên Ân (MSSV: 25AI111) - Đại học Lạc Hồng.">
+    <meta name="author" content="Mạc Thùy Thiên Ân - MSSV: 25AI111">
+    <meta name="robots" content="index, follow">
+    <title>Buổi 08: JavaScript Console & Logic Builder | Mạc Thùy Thiên Ân - 25AI111</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- File CSS chính của Buổi 08 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================================
+         1. SITE HEADER & NAVIGATION
+         ========================================================================= -->
+    <header class="site-header" id="topHeader">
+        <div class="container">
+            <div class="header-inner">
+
+                <!-- Logo Thương hiệu -->
+                <a href="#hero" class="brand-link" aria-label="Nexus Buổi 08 Trang Chủ">
+                    <span class="brand-icon">JS</span>
+                    <div class="brand-text">
+                        <h1>Nexus JS Lab</h1>
+                        <span class="brand-tag">LHU · Buổi 08 · 25AI111</span>
+                    </div>
+                </a>
+
+                <!-- Điều hướng Desktop -->
+                <nav class="nav-desktop" aria-label="Điều hướng chính">
+                    <ul class="nav-list">
+                        <li><a href="#terminal" class="nav-link"><i class="fa-solid fa-terminal"></i> Console F12</a></li>
+                        <li><a href="#hoatdong1" class="nav-link"><i class="fa-solid fa-code"></i> Hoạt động 1</a></li>
+                        <li><a href="#hoatdong2" class="nav-link"><i class="fa-solid fa-calculator"></i> Logic Builder</a></li>
+                        <li><a href="#hoatdong3" class="nav-link"><i class="fa-solid fa-brain"></i> AI Explainer</a></li>
+                        <li><a href="#homework" class="nav-link active"><i class="fa-solid fa-list-check"></i> 6 Bài Tập</a></li>
+                    </ul>
+                    <a href="../index.html" class="nav-btn-hub">
+                        <i class="fa-solid fa-arrow-left"></i> Nexus Hub
+                    </a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         MAIN CONTENT AREA
+         ========================================================================= -->
+    <main>
+
+        <!-- HERO SECTION: TỔNG QUAN BUỔI 08 & HỒ SƠ SINH VIÊN -->
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <div class="hero-card">
+
+                    <div class="hero-content">
+                        <div class="hero-badge-wrap">
+                            <span class="hero-badge"><i class="fa-brands fa-js"></i> JavaScript Core</span>
+                            <span class="hero-badge hero-badge-sub"><i class="fa-solid fa-book-open"></i> Giáo trình Lạc Hồng - Trang 60</span>
+                        </div>
+
+                        <h2 class="hero-title">
+                            Buổi 08: <span>Nhập Môn JavaScript, Console</span> &amp; Logic Builder
+                        </h2>
+
+                        <p class="hero-desc">
+                            Thực hành tương tác trực tiếp với trình duyệt qua DevTools Console (F12), khai báo biến số học, phân tích cơ chế ép kiểu ngầm định (Type Coercion), giải bài toán phân loại điểm với cấu trúc rẽ nhánh if-else và hoàn thiện 6 bài tập tự rèn luyện tại nhà.
+                        </p>
+
+                        <div class="hero-actions">
+                            <button type="button" class="btn-primary" onclick="runHoatDong1()">
+                                <i class="fa-solid fa-play"></i> Chạy HĐ1 vào Console
+                            </button>
+                            <button type="button" class="btn-secondary" onclick="runHoatDong2Prompt()">
+                                <i class="fa-solid fa-square-poll-vertical"></i> Prompt() Xếp loại điểm
+                            </button>
+                            <a href="#homework" class="btn-secondary">
+                                <i class="fa-solid fa-arrow-down"></i> Xem 6 Bài tập tự rèn luyện
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hộp hồ sơ sinh viên Lạc Hồng -->
+                    <aside class="hero-profile" aria-label="Thông tin sinh viên thực hiện">
+                        <div class="profile-card-top">
+                            <div class="avatar-wrapper">
+                                <img src="avatar.jpg" onerror="this.onerror=null; this.src='../avatar.jpg';"
+                                    alt="Ảnh chân dung Mạc Thùy Thiên Ân" width="64" height="64">
+                                <span class="avatar-status-dot" title="Đang trực tuyến"></span>
+                            </div>
+                            <div>
+                                <h3 class="profile-name">Mạc Thùy Thiên Ân</h3>
+                                <p class="profile-id">MSSV: 25AI111 · Lớp 25AI111</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-list">
+                            <div class="info-item">
+                                <span class="info-label"><i class="fa-solid fa-graduation-cap"></i> Cơ sở đào tạo:</span>
+                                <span class="info-val">Đại học Lạc Hồng (LHU)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label"><i class="fa-solid fa-laptop-code"></i> Học phần:</span>
+                                <span class="info-val">111101 · Thiết Kế Web</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label"><i class="fa-solid fa-calendar-check"></i> Tiến độ:</span>
+                                <span class="info-val" style="color: #34d399;">Hoàn thành đầy đủ (100%)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label"><i class="fa-solid fa-keyboard"></i> Phím tắt khuyến nghị:</span>
+                                <span class="info-val"><kbd style="background:#1e293b; padding:2px 6px; border-radius:4px; font-family:var(--font-mono);">F12</kbd> (DevTools)</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             DEVTOOLS CONSOLE TERMINAL SIMULATOR (MÔ PHỎNG CONSOLE F12 TRỰC QUAN)
+             ========================================================================= -->
+        <section class="section-terminal-demo" id="terminal">
+            <div class="container">
+                <div class="terminal-wrapper">
+
+                    <header class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="term-btn term-red" title="Đóng"></span>
+                            <span class="term-btn term-yellow" title="Thu nhỏ"></span>
+                            <span class="term-btn term-green" title="Phóng to"></span>
+                        </div>
+                        <div class="terminal-title">
+                            <i class="fa-solid fa-terminal"></i> Nexus Interactive DevTools Console Simulator · F12 Sync
+                        </div>
+                        <div class="terminal-actions">
+                            <button type="button" class="btn-term-action" onclick="Terminal.clear()">
+                                <i class="fa-solid fa-ban"></i> Clear
+                            </button>
+                            <button type="button" class="btn-term-action" onclick="runHoatDong1()">
+                                <i class="fa-solid fa-play"></i> Run HĐ1
+                            </button>
+                        </div>
+                    </header>
+
+                    <div class="terminal-body" id="terminalOutput" role="log" aria-live="polite">
+                        <!-- Output sẽ được in tự động bởi Terminal.log() -->
+                    </div>
+
+                    <div class="terminal-input-bar">
+                        <span class="input-prompt">&gt;</span>
+                        <input type="text" id="termCommandInput" class="terminal-input"
+                               placeholder="Gõ lệnh JavaScript tại đây và nhấn Enter (ví dụ: '10' + 20 hoặc 15 * 4 hoặc alert('Hello!'))..."
+                               autocomplete="off">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             HOẠT ĐỘNG 1: "HELLO JS CONSOLE" - ĐỐI THOẠI VỚI TRÌNH DUYỆT (30 PHÚT)
+             ========================================================================= -->
+        <section class="section-block" id="hoatdong1">
+            <div class="container">
+
+                <header class="section-head">
+                    <span class="section-badge"><i class="fa-solid fa-code"></i> Hoạt động 1 · Thời lượng 30 phút</span>
+                    <h2 class="section-title">"Hello JS Console" - Đối Thoại Với Trình Duyệt</h2>
+                    <p class="section-subtitle">
+                        Mở tab Console (F12) để khai báo tên, tuổi và thực hiện các phép toán cộng trừ nhân chia trực tiếp. Sử dụng tư duy Vibe Coding để hiểu sâu cơ chế ép kiểu String trong JavaScript.
+                    </p>
+                </header>
+
+                <div class="grid-activity1">
+
+                    <!-- Thẻ mã nguồn & kết quả phép toán -->
+                    <div class="card-console-ops">
+                        <h3 style="font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-laptop-file" style="color: var(--color-primary);"></i> Mã Nguồn Khai Báo &amp; Toán Tử Cơ Bản
+                        </h3>
+
+                        <div class="code-box">
+                            <span class="code-comment">// 1. Khai báo họ tên và tuổi sinh viên LHU</span><br>
+                            <span class="code-kw">const</span> <span class="code-var">tenSinhVien</span> = <span class="code-str">"Mạc Thùy Thiên Ân"</span>;<br>
+                            <span class="code-kw">const</span> <span class="code-var">tuoiSinhVien</span> = <span class="code-num">20</span>;<br><br>
+                            <span class="code-comment">// 2. Thực hiện các phép toán số học trực tiếp</span><br>
+                            <span class="code-kw">const</span> <span class="code-var">a</span> = <span class="code-num">15</span>, <span class="code-var">b</span> = <span class="code-num">4</span>;<br>
+                            <span class="code-var">console</span>.log(<span class="code-str">"Cộng:"</span>, a + b); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// 19</span><br>
+                            <span class="code-var">console</span>.log(<span class="code-str">"Trừ:"</span>, a - b); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// 11</span><br>
+                            <span class="code-var">console</span>.log(<span class="code-str">"Nhân:"</span>, a * b); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// 60</span><br>
+                            <span class="code-var">console</span>.log(<span class="code-str">"Chia:"</span>, a / b); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// 3.75</span><br>
+                            <span class="code-var">console</span>.log(<span class="code-str">"Chia dư:"</span>, a % b); &nbsp;&nbsp;<span class="code-comment">// 3</span>
+                        </div>
+
+                        <div class="calc-ops-grid">
+                            <div class="calc-op-card">
+                                <div class="op-title">Phép Cộng (+)</div>
+                                <div class="op-expression">15 + 4</div>
+                                <div class="op-result">19</div>
+                            </div>
+                            <div class="calc-op-card">
+                                <div class="op-title">Phép Trừ (-)</div>
+                                <div class="op-expression">15 - 4</div>
+                                <div class="op-result">11</div>
+                            </div>
+                            <div class="calc-op-card">
+                                <div class="op-title">Phép Nhân (*)</div>
+                                <div class="op-expression">15 * 4</div>
+                                <div class="op-result">60</div>
+                            </div>
+                            <div class="calc-op-card">
+                                <div class="op-title">Phép Chia (/)</div>
+                                <div class="op-expression">15 / 4</div>
+                                <div class="op-result">3.75</div>
+                            </div>
+                            <div class="calc-op-card">
+                                <div class="op-title">Chia lấy dư (%)</div>
+                                <div class="op-expression">15 % 4</div>
+                                <div class="op-result">3</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="button" class="btn-primary" onclick="runHoatDong1()" style="width: 100%; justify-content: center;">
+                                <i class="fa-solid fa-arrows-rotate"></i> Thực thi lại &amp; In ra Console
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Vibe Coding Explainer Card -->
+                    <div class="card-vibe-explainer">
+                        <span class="ai-header-badge">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Vibe Coding · Trợ Lý AI Phân Tích
+                        </span>
+
+                        <h3 class="ai-query-title">
+                            "Tại sao khi cộng <code>'10' + 20</code> trong JS lại ra <code>'1020'</code> mà không phải <code>30</code>?"
+                        </h3>
+
+                        <div class="ai-response-box">
+                            <div class="ai-point-item">
+                                <i class="fa-solid fa-circle-check ai-point-icon"></i>
+                                <div>
+                                    <strong>1. Cơ chế Ép kiểu ngầm định (Type Coercion):</strong>
+                                    Toán tử <code class="code-pill">+</code> trong JavaScript đảm nhận 2 nhiệm vụ: Phép cộng số học (Addition) và Phép ghép chuỗi (String Concatenation).
+                                </div>
+                            </div>
+
+                            <div class="ai-point-item">
+                                <i class="fa-solid fa-circle-check ai-point-icon"></i>
+                                <div>
+                                    <strong>2. Quy tắc ưu tiên nối chuỗi của ECMAScript:</strong>
+                                    Nếu có ít nhất 1 toán hạng là String (ở đây là <code class="code-pill">'10'</code>), JS sẽ tự động chuyển đổi toán hạng còn lại (số <code class="code-pill">20</code>) thành chuỗi <code class="code-pill">'20'</code> rồi thực hiện nối hai chuỗi:
+                                    <br><code class="code-pill">'10' + '20' = '1020'</code>.
+                                </div>
+                            </div>
+
+                            <div class="ai-point-item">
+                                <i class="fa-solid fa-circle-check ai-point-icon"></i>
+                                <div>
+                                    <strong>3. Sự khác biệt với các toán tử khác:</strong>
+                                    Các toán tử <code class="code-pill">-</code>, <code class="code-pill">*</code>, <code class="code-pill">/</code> chỉ dành riêng cho số học. Do đó, <code class="code-pill">'10' - 20</code> sẽ ép <code class="code-pill">'10'</code> thành số 10 và trả về <code class="code-pill">-10</code>!
+                                </div>
+                            </div>
+
+                            <div class="ai-point-item">
+                                <i class="fa-solid fa-lightbulb ai-point-icon" style="color: var(--color-yellow-js);"></i>
+                                <div>
+                                    <strong>4. Giải pháp để ra kết quả 30:</strong>
+                                    Ép kiểu tường minh trước khi tính toán:
+                                    <br>• <code class="code-pill">Number('10') + 20 = 30</code>
+                                    <br>• <code class="code-pill">parseInt('10', 10) + 20 = 30</code>
+                                    <br>• <code class="code-pill">+'10' + 20 = 30</code> (Toán tử Unary Plus)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.25rem;">
+                            <button type="button" class="btn-secondary" onclick="testTypeCoercion()" style="width: 100%; justify-content: center; background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #d8b4fe;">
+                                <i class="fa-solid fa-flask"></i> Kiểm tra thực tế trong Console Simulator
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             HOẠT ĐỘNG 2: "LOGIC BUILDER" - MÁY TÍNH MINI & PHÂN LOẠI ĐIỂM (45 PHÚT)
+             ========================================================================= -->
+        <section class="section-block" id="hoatdong2">
+            <div class="container">
+
+                <header class="section-head">
+                    <span class="section-badge"><i class="fa-solid fa-calculator"></i> Hoạt động 2 · Thời lượng 45 phút</span>
+                    <h2 class="section-title">"Logic Builder" - Máy Tính Mini &amp; Xếp Loại Điểm Số</h2>
+                    <p class="section-subtitle">
+                        Học phần 111101 Thiết kế Web · Giáo trình giảng dạy Lạc Hồng Trang 60. Sử dụng cấu trúc điều kiện <code>if - else if - else</code> để kiểm tra điều kiện đạt/hỏng và phân loại học lực: Giỏi (&gt;8), Khá (&gt;6.5), Trung bình (&gt;=5), Yếu (&lt;5).
+                    </p>
+                </header>
+
+                <div class="grid-logic-builder">
+
+                    <!-- Giao diện tương tác Realtime -->
+                    <div class="card-logic-interactive">
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                <i class="fa-solid fa-sliders" style="color: var(--color-primary);"></i> Thử Nghiệm Tương Tác Trực Quan (Real-time)
+                            </h3>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                                Kéo thanh trượt hoặc gõ trực tiếp điểm số từ 0.0 đến 10.0 để quan sát thuật toán phân loại logic cập nhật tức thời:
+                            </p>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="scoreInput" class="input-label">
+                                <span>Điểm số học phần (Thang 10)</span>
+                                <span class="hint">Thang điểm: 0.0 &rarr; 10.0</span>
+                            </label>
+                            <div class="score-slider-wrap">
+                                <input type="range" id="scoreSlider" class="range-slider" min="0" max="10" step="0.1" value="8.5" aria-label="Thanh trượt điểm số">
+                                <input type="number" id="scoreInput" class="score-number-input" min="0" max="10" step="0.1" value="8.5" aria-label="Ô nhập điểm số">
+                            </div>
+                        </div>
+
+                        <!-- Card kết quả Real-time -->
+                        <div class="result-card-live" id="liveResultBox">
+                            <div class="result-badge-wrap">
+                                <div class="result-icon-box grade-gioi" id="gradeIconBox">
+                                    <i class="fa-solid fa-trophy"></i>
+                                </div>
+                                <div class="result-info">
+                                    <h3 id="gradeTitle">Giỏi (Grade A)</h3>
+                                    <p id="gradeDesc">Chúc mừng bạn đã đạt loại Giỏi! Thành tích xuất sắc!</p>
+                                </div>
+                            </div>
+                            <div class="score-meter">
+                                <span class="meter-num" id="meterNum">8.5</span>
+                                <span class="meter-sub">Điểm số</span>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.85rem;">
+                            <strong style="color: var(--color-yellow-js); display: block; margin-bottom: 0.4rem;">
+                                <i class="fa-solid fa-circle-info"></i> Bảng Tiêu Chí Giáo Trình Lạc Hồng:
+                            </strong>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; font-family: var(--font-mono); color: var(--text-secondary);">
+                                <span>• Điểm &gt; 8.0: <span style="color:#34d399;">Loại Giỏi</span></span>
+                                <span>• Điểm &gt; 6.5: <span style="color:#38bdf8;">Loại Khá</span></span>
+                                <span>• Điểm &gt;= 5.0: <span style="color:#facc15;">Trung Bình (Đạt)</span></span>
+                                <span>• Điểm &lt; 5.0: <span style="color:#f43f5e;">Yếu (Chưa đạt)</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chế độ chạy Prompt & Alert theo chuẩn đề bài -->
+                    <div class="card-prompt-runner">
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fa-solid fa-window-restore" style="color: var(--color-yellow-js);"></i>
+                                Thực Thi Bằng prompt() &amp; alert()
+                            </h3>
+                            <p class="prompt-guidelines">
+                                Đây là phương thức tương tác nguyên bản theo đúng yêu cầu đề thi &amp; giáo trình:
+                            </p>
+                            <div class="prompt-guidelines">
+                                <ul>
+                                    <li>Sử dụng hộp thoại <code>prompt()</code> để người dùng nhập điểm số trực tiếp từ bàn phím.</li>
+                                    <li>Sử dụng hàm <code>parseFloat()</code> để ép chuỗi nhập sang số thực.</li>
+                                    <li>Kiểm tra cấu trúc <code>if (score &gt;= 5)</code> để thông báo <em>"Chúc mừng bạn đã đạt!"</em> hoặc <em>"Rất tiếc, hãy cố gắng hơn!"</em>.</li>
+                                    <li>Hiển thị toàn diện kết quả bằng hộp thoại <code>alert()</code> và in vào <code>console.log()</code>.</li>
+                                </ul>
+                            </div>
+
+                            <div class="code-box" style="margin-top: 1.25rem;">
+                                <span class="code-kw">const</span> <span class="code-var">input</span> = prompt(<span class="code-str">"Nhập số điểm của bạn:"</span>);<br>
+                                <span class="code-kw">const</span> <span class="code-var">score</span> = parseFloat(input);<br>
+                                <span class="code-kw">if</span> (score &gt;= <span class="code-num">5</span>) {<br>
+                                &nbsp;&nbsp;alert(<span class="code-str">"Chúc mừng bạn đã đạt!"</span>);<br>
+                                } <span class="code-kw">else</span> {<br>
+                                &nbsp;&nbsp;alert(<span class="code-str">"Rất tiếc, hãy cố gắng hơn!"</span>);<br>
+                                }
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="button" class="btn-primary" onclick="runHoatDong2Prompt()" style="width: 100%; justify-content: center; background: var(--grad-js); color: #000; box-shadow: 0 4px 18px rgba(250, 204, 21, 0.4);">
+                                <i class="fa-solid fa-play"></i> Bấm để Mở Hộp Thoại prompt() &amp; alert()
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             HOẠT ĐỘNG 3: "AI LOGIC EXPLAINER" (30 PHÚT)
+             ========================================================================= -->
+        <section class="section-block" id="hoatdong3">
+            <div class="container">
+
+                <header class="section-head">
+                    <span class="section-badge"><i class="fa-solid fa-brain"></i> Hoạt động 3 · Thời lượng 30 phút</span>
+                    <h2 class="section-title">"AI Logic Explainer" - Dịch Mã JS Sang Ngôn Ngữ Tự Nhiên</h2>
+                    <p class="section-subtitle">
+                        Phân tích các đoạn mã lỗi, hiện tượng kỳ lạ và bẫy cú pháp kinh điển trong JavaScript. Sinh viên sử dụng AI để "dịch" mã sang luồng tư duy tự nhiên để làm chủ Call Stack và Execution Context.
+                    </p>
+                </header>
+
+                <!-- Thanh chọn các trường hợp bẫy cú pháp -->
+                <nav class="explainer-tabs-nav" aria-label="Danh sách trường hợp mã lỗi">
+                    <button type="button" class="tab-btn active" data-tab="hoisting" onclick="switchExplainerTab('hoisting')">
+                        <i class="fa-solid fa-arrow-up-wide-short"></i> 1. Hoisting &amp; TDZ
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="equality" onclick="switchExplainerTab('equality')">
+                        <i class="fa-solid fa-equals"></i> 2. Dị Biệt `[] == ![]`
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="float" onclick="switchExplainerTab('float')">
+                        <i class="fa-solid fa-percent"></i> 3. Sai Số 0.1 + 0.2
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="closure" onclick="switchExplainerTab('closure')">
+                        <i class="fa-solid fa-clock-rotate-left"></i> 4. Scope Trong Vòng Lặp
+                    </button>
+                </nav>
+
+                <!-- Panel 1: Hoisting -->
+                <div class="explainer-panel active" id="panel-hoisting">
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem;">
+                            Đoạn Mã Gốc Cần Phân Tích:
+                        </h3>
+                        <div class="code-box">
+                            <span class="code-var">console</span>.log(x); <span class="code-comment">// In ra gì?</span><br>
+                            <span class="code-kw">var</span> <span class="code-var">x</span> = <span class="code-num">10</span>;<br><br>
+                            <span class="code-var">console</span>.log(y); <span class="code-comment">// In ra gì?</span><br>
+                            <span class="code-kw">let</span> <span class="code-var">y</span> = <span class="code-num">20</span>;
+                        </div>
+                        <button type="button" class="btn-secondary" onclick="runExplainerSnippet('hoisting')" style="margin-top: 1rem; width: 100%; justify-content: center;">
+                            <i class="fa-solid fa-terminal"></i> Chạy thử vào Console Simulator
+                        </button>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem; color: #34d399;">
+                            <i class="fa-solid fa-robot"></i> AI "Dịch" Sang Ngôn Ngữ Tự Nhiên:
+                        </h3>
+                        <div class="ai-step-list">
+                            <div class="ai-step-item">
+                                <strong>Bước 1: Khởi tạo biến var x (Hoisting)</strong>
+                                JS di chuyển việc khai báo <code class="code-pill">var x</code> lên đầu phạm vi và tự động gán giá trị khởi tạo là <code class="code-pill">undefined</code>. Do đó, dòng log đầu tiên in ra <code>undefined</code> chứ không bị lỗi.
+                            </div>
+                            <div class="ai-step-item">
+                                <strong>Bước 2: Temporal Dead Zone (TDZ) với let y</strong>
+                                Biến <code class="code-pill">let y</code> cũng được hoisted nhưng không được khởi tạo giá trị. Khu vực từ đầu phạm vi đến dòng khai báo gọi là "Vùng chết tạm thời" (TDZ). Truy cập vào sẽ vấp lỗi ngay: <code>ReferenceError: Cannot access 'y' before initialization</code>.
+                            </div>
+                            <div class="ai-step-item">
+                                <strong>Bài học rút ra:</strong>
+                                Luôn sử dụng <code>const</code> hoặc <code>let</code> và khai báo biến ở đầu khối lệnh để tránh các hành vi khó đoán của <code>var</code>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Equality -->
+                <div class="explainer-panel" id="panel-equality">
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem;">
+                            Đoạn Mã Gốc Cần Phân Tích:
+                        </h3>
+                        <div class="code-box">
+                            <span class="code-var">console</span>.log([] == ![]); <span class="code-comment">// Kết quả là true hay false?</span>
+                        </div>
+                        <button type="button" class="btn-secondary" onclick="runExplainerSnippet('equality')" style="margin-top: 1rem; width: 100%; justify-content: center;">
+                            <i class="fa-solid fa-terminal"></i> Chạy thử vào Console Simulator
+                        </button>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem; color: #34d399;">
+                            <i class="fa-solid fa-robot"></i> AI "Dịch" Từng Bước Thực Thi:
+                        </h3>
+                        <div class="ai-step-list">
+                            <div class="ai-step-item">
+                                <strong>Bước 1: Toán tử phủ định ! có độ ưu tiên cao hơn</strong>
+                                <code class="code-pill">[]</code> là đối tượng dạng mảng (truthy), do đó phủ định <code class="code-pill">![]</code> chuyển thành giá trị Boolean <code class="code-pill">false</code>.
+                            </div>
+                            <div class="ai-step-item">
+                                <strong>Bước 2: So sánh lỏng lẻo [] == false</strong>
+                                Quy chuẩn so sánh ép kiểu Boolean sang Number: <code class="code-pill">false &rarr; 0</code>. Ta được biểu thức <code class="code-pill">[] == 0</code>.
+                            </div>
+                            <div class="ai-step-item">
+                                <strong>Bước 3: Mảng ép sang nguyên thủy</strong>
+                                <code class="code-pill">[]</code> gọi <code class="code-pill">valueOf()</code> rồi <code class="code-pill">toString()</code> thành chuỗi rỗng <code class="code-pill">""</code>. Chuỗi rỗng ép sang số thành <code class="code-pill">0</code>. Cuối cùng: <code class="code-pill">0 == 0</code> &rarr; <strong>true</strong>!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Float -->
+                <div class="explainer-panel" id="panel-float">
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem;">
+                            Đoạn Mã Gốc Cần Phân Tích:
+                        </h3>
+                        <div class="code-box">
+                            <span class="code-var">console</span>.log(<span class="code-num">0.1</span> + <span class="code-num">0.2</span> === <span class="code-num">0.3</span>); <span class="code-comment">// false! Tại sao?</span>
+                        </div>
+                        <button type="button" class="btn-secondary" onclick="runExplainerSnippet('float')" style="margin-top: 1rem; width: 100%; justify-content: center;">
+                            <i class="fa-solid fa-terminal"></i> Chạy thử vào Console Simulator
+                        </button>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem; color: #34d399;">
+                            <i class="fa-solid fa-robot"></i> AI "Dịch" Sang Ngôn Ngữ Tự Nhiên:
+                        </h3>
+                        <div class="ai-step-list">
+                            <div class="ai-step-item">
+                                <strong>Chuẩn dấu phẩy động IEEE 754:</strong>
+                                Máy tính lưu trữ số dưới dạng nhị phân (Binary). Các phân số thập phân như 0.1 và 0.2 khi đổi sang nhị phân sẽ thành số vô hạn tuần hoàn.
+                            </div>
+                            <div class="ai-step-item">
+                                <strong>Kết quả thực tế trong bộ nhớ:</strong>
+                                <code class="code-pill">0.1 + 0.2 = 0.30000000000000004</code>. Do đó, so sánh nghiêm ngặt <code class="code-pill">=== 0.3</code> trả về <strong>false</strong>.
+                            </div>
+                            <div class="ai-step-item">
+                                <strong>Cách khắc phục chuẩn trong lập trình tài chính/web:</strong>
+                                Sử dụng sai số cho phép: <code class="code-pill">Math.abs((0.1 + 0.2) - 0.3) &lt; Number.EPSILON</code> hoặc làm tròn với <code class="code-pill">Number((0.1 + 0.2).toFixed(2))</code>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4: Closure loop -->
+                <div class="explainer-panel" id="panel-closure">
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem;">
+                            Đoạn Mã Gốc Cần Phân Tích:
+                        </h3>
+                        <div class="code-box">
+                            <span class="code-kw">for</span> (<span class="code-kw">var</span> <span class="code-var">i</span> = <span class="code-num">1</span>; i &lt;= <span class="code-num">3</span>; i++) {<br>
+                            &nbsp;&nbsp;setTimeout(() =&gt; <span class="code-var">console</span>.log(i), <span class="code-num">100</span>);<br>
+                            }<br>
+                            <span class="code-comment">// Kết quả in ra: 4, 4, 4 thay vì 1, 2, 3!</span>
+                        </div>
+                        <button type="button" class="btn-secondary" onclick="runExplainerSnippet('closure')" style="margin-top: 1rem; width: 100%; justify-content: center;">
+                            <i class="fa-solid fa-terminal"></i> Chạy thử vào Console Simulator
+                        </button>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem; color: #34d399;">
+                            <i class="fa-solid fa-robot"></i> AI "Dịch" Sang Ngôn Ngữ Tự Nhiên:
+                        </h3>
+                        <div class="ai-step-list">
+                            <div class="ai-step-item">
+                                <strong>Cơ chế Event Loop &amp; Phạm vi biến:</strong>
+                                Từ khóa <code>var</code> không có block scope (chỉ có function/global scope). Cả 3 lần lặp đều tham chiếu tới duy nhất 1 ô nhớ biến <code>i</code>.
+                            </div>
+                            <div class="ai-step-item">
+                                <strong>Hàm bất đồng bộ setTimeout:</strong>
+                                Vòng for chạy kết thúc ngay lập tức, làm biến <code>i</code> tăng lên đến 4. Sau đó 100ms, hàng đợi tác vụ (Callback Queue) mới thực thi các hàm callback và in ra giá trị hiện tại của <code>i</code> là 4.
+                            </div>
+                            <div class="ai-step-item">
+                                <strong>Cách sửa hiện đại:</strong>
+                                Chỉ cần thay <code class="code-pill">var i</code> bằng <code class="code-pill">let i</code>. Vì <code>let</code> có Block Scope, mỗi vòng lặp sẽ đóng gói một giá trị <code>i</code> độc lập!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             SECTION 5: 6 BÀI TẬP TỰ RÈN LUYỆN TẠI NHÀ (HOMEWORK BUỔI 08)
+             ========================================================================= -->
+        <section class="section-block" id="homework">
+            <div class="container">
+
+                <header class="section-head">
+                    <span class="section-badge"><i class="fa-solid fa-list-check"></i> 5. 6 Bài tập tự rèn luyện tại nhà</span>
+                    <h2 class="section-title">Hệ Thống 6 Bài Tập Tự Rèn Luyện (Homework)</h2>
+                    <p class="section-subtitle">
+                        Mỗi bài tập được thiết kế đầy đủ hai chế độ: Hộp thoại nguyên bản theo đề bài (<code>prompt()</code> / <code>alert()</code> / <code>console.log()</code>) và Giao diện tính toán tương tác trực quan với định dạng dữ liệu chuẩn Việt Nam.
+                    </p>
+                </header>
+
+                <div class="grid-homework">
+
+                    <!-- BÀI 1: CHUYỂN ĐỔI TIỀN TỆ -->
+                    <article class="hw-card">
+                        <div>
+                            <div class="hw-header">
+                                <span class="hw-num-badge">01</span>
+                                <div style="flex: 1;">
+                                    <h3 class="hw-title">Chuyển Đổi Tiền Tệ Đơn Giản</h3>
+                                    <p class="hw-desc">
+                                        Nhập số lượng USD và tính ra số tiền VND tương ứng (giả sử tỉ giá 25.000). Kết quả in ra console.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="hw-interactive-area" style="margin-top: 1.25rem;">
+                                <label for="hw1UsdInput" class="input-label">Số lượng USD ($):</label>
+                                <div class="form-row">
+                                    <input type="number" id="hw1UsdInput" class="input-field" value="100" min="0" step="1">
+                                    <button type="button" class="btn-calculate" onclick="calculateBai1UI()">Đổi</button>
+                                </div>
+                                <div class="hw-output-box success" id="hw1Output">
+                                    <strong>2.500.000 ₫</strong> (Tỉ giá 25.000 ₫/USD)
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer class="hw-actions">
+                            <button type="button" class="btn-run-prompt" onclick="runBai1Prompt()">
+                                <i class="fa-solid fa-terminal"></i> Chạy Prompt()
+                            </button>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">USD * 25.000</span>
+                        </footer>
+                    </article>
+
+                    <!-- BÀI 2: KIỂM TRA SỐ CHẴN / LẺ -->
+                    <article class="hw-card">
+                        <div>
+                            <div class="hw-header">
+                                <span class="hw-num-badge">02</span>
+                                <div style="flex: 1;">
+                                    <h3 class="hw-title">Kiểm Tra Số Chẵn / Lẻ</h3>
+                                    <p class="hw-desc">
+                                        Nhập một số bất kỳ từ bàn phím. Thông báo cho người dùng biết đó là số chẵn hay số lẻ.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="hw-interactive-area" style="margin-top: 1.25rem;">
+                                <label for="hw2NumInput" class="input-label">Nhập số bất kỳ:</label>
+                                <div class="form-row">
+                                    <input type="number" id="hw2NumInput" class="input-field" value="42" step="any">
+                                    <button type="button" class="btn-calculate" onclick="calculateBai2UI()">Kiểm tra</button>
+                                </div>
+                                <div class="hw-output-box success" id="hw2Output">
+                                    <strong>42 là số CHẴN.</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer class="hw-actions">
+                            <button type="button" class="btn-run-prompt" onclick="runBai2Prompt()">
+                                <i class="fa-solid fa-terminal"></i> Chạy Prompt()
+                            </button>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">n % 2 === 0</span>
+                        </footer>
+                    </article>
+
+                    <!-- BÀI 3: TÍNH CHỈ SỐ BMI CƠ BẢN -->
+                    <article class="hw-card">
+                        <div>
+                            <div class="hw-header">
+                                <span class="hw-num-badge">03</span>
+                                <div style="flex: 1;">
+                                    <h3 class="hw-title">Tính Chỉ Số BMI Cơ Bản</h3>
+                                    <p class="hw-desc">
+                                        Nhập chiều cao (m) và cân nặng (kg). Tính BMI = cân nặng / (chiều cao * chiều cao) và in ra kết quả.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="hw-interactive-area" style="margin-top: 1.25rem;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                                    <div>
+                                        <label for="hw3HeightInput" class="input-label">Chiều cao (m):</label>
+                                        <input type="number" id="hw3HeightInput" class="input-field" value="1.68" step="0.01">
+                                    </div>
+                                    <div>
+                                        <label for="hw3WeightInput" class="input-label">Cân nặng (kg):</label>
+                                        <input type="number" id="hw3WeightInput" class="input-field" value="58" step="0.5">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-calculate" onclick="calculateBai3UI()" style="width: 100%; justify-content: center;">
+                                    Tính Chỉ Số BMI
+                                </button>
+                                <div class="hw-output-box success" id="hw3Output">
+                                    <strong>BMI: 20.55</strong> - Bình thường (Normal weight)
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer class="hw-actions">
+                            <button type="button" class="btn-run-prompt" onclick="runBai3Prompt()">
+                                <i class="fa-solid fa-terminal"></i> Chạy Prompt()
+                            </button>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">W / (H * H)</span>
+                        </footer>
+                    </article>
+
+                    <!-- BÀI 4: LOGIC ĐĂNG NHẬP (MÔ PHỎNG) -->
+                    <article class="hw-card">
+                        <div>
+                            <div class="hw-header">
+                                <span class="hw-num-badge">04</span>
+                                <div style="flex: 1;">
+                                    <h3 class="hw-title">Logic Đăng Nhập (Mô Phỏng)</h3>
+                                    <p class="hw-desc">
+                                        Tạo 2 biến username và password cố định. Nếu đúng cả 2 thì hiện "Đăng nhập thành công", nếu sai 1 trong 2 thì hiện "Thông tin không chính xác".
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="hw-interactive-area" style="margin-top: 1.25rem;">
+                                <div>
+                                    <label for="hw4UserInput" class="input-label">Username:</label>
+                                    <input type="text" id="hw4UserInput" class="input-field" value="thienan">
+                                </div>
+                                <div>
+                                    <label for="hw4PassInput" class="input-label">Password:</label>
+                                    <input type="password" id="hw4PassInput" class="input-field" value="25AI111">
+                                </div>
+                                <button type="button" class="btn-calculate" onclick="calculateBai4UI()" style="width: 100%; justify-content: center;">
+                                    Xác Thực Đăng Nhập
+                                </button>
+                                <div class="hw-output-box success" id="hw4Output">
+                                    <strong>Đăng nhập thành công</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer class="hw-actions">
+                            <button type="button" class="btn-run-prompt" onclick="runBai4Prompt()">
+                                <i class="fa-solid fa-terminal"></i> Chạy Prompt()
+                            </button>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">u === U &amp;&amp; p === P</span>
+                        </footer>
+                    </article>
+
+                    <!-- BÀI 5: MÁY TÍNH GIẢM GIÁ (DISCOUNT CALCULATOR) -->
+                    <article class="hw-card">
+                        <div>
+                            <div class="hw-header">
+                                <span class="hw-num-badge">05</span>
+                                <div style="flex: 1;">
+                                    <h3 class="hw-title">Máy Tính Giảm Giá (Discount)</h3>
+                                    <p class="hw-desc">
+                                        Nhập hóa đơn. Nếu số tiền &gt; 500.000đ thì giảm giá 10%, ngược lại không giảm. Tính số tiền cuối cùng phải trả.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="hw-interactive-area" style="margin-top: 1.25rem;">
+                                <label for="hw5BillInput" class="input-label">Số tiền hóa đơn (VNĐ):</label>
+                                <div class="form-row">
+                                    <input type="number" id="hw5BillInput" class="input-field" value="750000" step="50000" min="0">
+                                    <button type="button" class="btn-calculate" onclick="calculateBai5UI()">Tính bill</button>
+                                </div>
+                                <div class="hw-output-box success" id="hw5Output">
+                                    Phải trả: <strong>675.000 ₫</strong> (Đã giảm 10%: 75.000 ₫)
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer class="hw-actions">
+                            <button type="button" class="btn-run-prompt" onclick="runBai5Prompt()">
+                                <i class="fa-solid fa-terminal"></i> Chạy Prompt()
+                            </button>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">&gt; 500k ? -10% : 0%</span>
+                        </footer>
+                    </article>
+
+                    <!-- BÀI 6: PHÂN LOẠI TAM GIÁC -->
+                    <article class="hw-card">
+                        <div>
+                            <div class="hw-header">
+                                <span class="hw-num-badge">06</span>
+                                <div style="flex: 1;">
+                                    <h3 class="hw-title">Phân Loại Tam Giác</h3>
+                                    <p class="hw-desc">
+                                        Nhập 3 cạnh của tam giác. Kiểm tra xem đó có phải là tam giác đều không (3 cạnh bằng nhau) &amp; vẽ hình minh họa.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="hw-interactive-area" style="margin-top: 1.25rem;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;">
+                                    <div>
+                                        <label for="hw6SideA" class="input-label">Cạnh a:</label>
+                                        <input type="number" id="hw6SideA" class="input-field" value="5" min="1" step="0.5">
+                                    </div>
+                                    <div>
+                                        <label for="hw6SideB" class="input-label">Cạnh b:</label>
+                                        <input type="number" id="hw6SideB" class="input-field" value="5" min="1" step="0.5">
+                                    </div>
+                                    <div>
+                                        <label for="hw6SideC" class="input-label">Cạnh c:</label>
+                                        <input type="number" id="hw6SideC" class="input-field" value="5" min="1" step="0.5">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-calculate" onclick="calculateBai6UI()" style="width: 100%; justify-content: center;">
+                                    Kiểm Tra Tam Giác
+                                </button>
+                                <div class="hw-output-box success" id="hw6Output">
+                                    <strong>Tam giác ĐỀU</strong>: Cả 3 cạnh bằng nhau (a = b = c = 5).
+                                </div>
+                                <div class="triangle-canvas-wrap">
+                                    <canvas id="triangleCanvas" width="220" height="140"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer class="hw-actions">
+                            <button type="button" class="btn-run-prompt" onclick="runBai6Prompt()">
+                                <i class="fa-solid fa-terminal"></i> Chạy Prompt()
+                            </button>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">a === b &amp;&amp; b === c</span>
+                        </footer>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================================
+         FOOTER CHUẨN NEXUS HUB & W3C
+         ========================================================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+
+                <div class="footer-brand">
+                    <h4>Nexus · Học Phần Thiết Kế Web 111101</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 0.85rem;">
+                        Chuyên ngành Trí tuệ Nhân tạo &amp; Phát triển Web Frontend · Đại học Lạc Hồng (LHU).
+                    </p>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">
+                        Sinh viên thực hiện: <strong>Mạc Thùy Thiên Ân</strong> (MSSV: 25AI111).
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Mục Lục Tuần Học</h5>
+                    <ul class="footer-links">
+                        <li><a href="../BaiTap_Buoi01/index.html">Tuần 01: Nhập Môn HTML5</a></li>
+                        <li><a href="../BaiTap_Buoi02/MacThuyThienAn_25AI111.html">Tuần 02: HTML5 Semantic</a></li>
+                        <li><a href="../BaiTap_Buoi03/MacThuyThienAn_25AI111.html">Tuần 03: CSS Box Model</a></li>
+                        <li><a href="../BaiTap_Buoi04/MacThuyThienAn_25AI111.html">Tuần 04: Flexbox &amp; Grid</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Tuần 05 &rarr; Tuần 08</h5>
+                    <ul class="footer-links">
+                        <li><a href="../BaiTap_Buoi05/index.html">Tuần 05: CSS Animation &amp; AOS</a></li>
+                        <li><a href="../BaiTap_Buoi06/index.html">Tuần 06: Capstone Index Hub</a></li>
+                        <li><a href="index.html" style="color: var(--color-primary); font-weight: bold;">Tuần 08: JS Console &amp; Logic</a></li>
+                        <li><a href="../index.html">Quay về Nexus Hub Chính</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 Mạc Thùy Thiên Ân (25AI111) · Trường Đại học Lạc Hồng (LHU).
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <span style="color: #34d399;"><i class="fa-solid fa-circle-check"></i> W3C Validated</span>
+                    <a href="#hero" style="color: var(--text-muted); text-decoration: none;">
+                        <i class="fa-solid fa-arrow-up"></i> Đầu trang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript chính của Buổi 08 -->
+    <script src="script.js"></script>
+</body>
+
+</html>
